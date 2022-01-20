@@ -1,5 +1,11 @@
-<!-- <script setup lang="ts"></script> -->
+<script setup lang="ts">
+import Logo from './HeaderLogo.vue';
+import Routes from './HeaderRoutes.vue';
+</script>
 
 <template>
-  <h1 class="text-3xl text-red-800 font-bold underline">Header</h1>
+  <div class="flex justify-between py-8 px-8">
+    <Logo />
+    <Routes />
+  </div>
 </template>
