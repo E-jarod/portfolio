@@ -80,7 +80,10 @@
     "sourceMap": true,
     "lib": ["esnext", "dom"],
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@app/*": ["src/app/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@components/*": ["src/app/shared/components/*"],
+      "@layouts/*": ["src/app/shared/layouts/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

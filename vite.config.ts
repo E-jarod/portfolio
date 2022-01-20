@@ -6,7 +6,10 @@ import path from 'path';
 export default defineConfig({
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, './src/components'),
+      '@app': path.resolve(__dirname, './src/app'),
+      '@shared': path.resolve(__dirname, './src/app/shared'),
+      '@components': path.resolve(__dirname, './src/app/shared/components'),
+      '@layouts': path.resolve(__dirname, './src/app/shared/layouts'),
     },
   },
   plugins: [vue()],
