@@ -1,15 +1,90 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "useDefineForClassFields": true,
+    /// TYPE CHECKING ///
+    /* STRICT MODE CONFIGS START */
+    "strict": true, // activate all the configs below
+    /* "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true */
+    /* STRICT MODE CONFIGS END */
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    // TODO: verify
+    "noPropertyAccessFromIndexSignature": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    //
+    /// MODULES ///
+    "allowUmdGlobalAccess": false,
+    "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "node",
-    "strict": true,
+    "noResolve": false,
+    "resolveJsonModule": true,
+    //
+    /// EMIT ///
+    // TODO: to see in detail
+    // "noEmit": false,
+    //
+    /// JS SUPPORT ///
+    "allowJs": false,
+    //
+    /// EDITOR SUPPORT ///
+    "disableSizeLimit": false,
+    // "plugins": [],
+    //
+    /// INTEROP CONSTRAINTS ///
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    // "preserveSymlinks": false,
+    //
+    /// BACKWARDS COMPATIBILITY ///
+    "noStrictGenericChecks": false,
+    "suppressExcessPropertyErrors": false,
+    "suppressImplicitAnyIndexErrors": false,
+    //
+    /// LANGUAGE AND ENVIRONMENTS ///
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noLib": false,
+    // "target": "esnext",
+    "target": "ES2017",
+    //
+    /// OUTPUT FORMATTING ///
+    "noErrorTruncation": true,
+    "preserveWatchOutput": true,
+    "pretty": true, // pretty error options for better DX
+    //
+    /// COMPLETENESS ///
+    "skipDefaultLibCheck": false,
+    //
+    /// WATCH OPTIONS ///
+    // https://www.typescriptlang.org/tsconfig#assumeChangesOnlyAffectDirectDependencies
+    "assumeChangesOnlyAffectDirectDependencies": false,
+    //
+    // OTHERS
+    "useDefineForClassFields": true,
     "jsx": "preserve",
     "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@components/*": ["src/app/shared/components/*"],
+      "@layouts/*": ["src/app/shared/layouts/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
