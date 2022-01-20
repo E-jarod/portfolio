@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "useDefineForClassFields": true,
-
     /// TYPE CHECKING ///
     /* STRICT MODE CONFIGS START */
     "strict": true, // activate all the configs below
@@ -77,9 +75,13 @@
     "assumeChangesOnlyAffectDirectDependencies": false,
     //
     // OTHERS
+    "useDefineForClassFields": true,
     "jsx": "preserve",
     "sourceMap": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "paths": {
+      "@components/*": ["src/components/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

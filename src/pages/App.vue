@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from '../components/HelloWorld.vue';
+import Home from './home/Home.vue';
 </script>
 
 <template>
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <Home msg="Hello Vue 3 + TypeScript + Vite" />
 </template>
