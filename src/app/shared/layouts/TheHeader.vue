@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Logo from './HeaderLogo.vue';
-import Routes from './HeaderRoutes.vue';
+import HeaderLogo from './HeaderLogo.vue';
+import HeaderRoutes from './HeaderRoutes.vue';
 </script>
 
 <template>
   <div class="flex justify-between py-8 px-8">
-    <Logo />
-    <Routes />
+    <HeaderLogo />
+    <HeaderRoutes />
   </div>
 </template>

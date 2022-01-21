@@ -4,8 +4,24 @@
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.formatOnType": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
-  "editor.rulers": [75]
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "css.validate": false,
+  "tailwindCSS.emmetCompletions": true,
+  "editor.rulers": [75],
+  "eslint.validate": ["vue", "javascript", "typescript"],
+  "eslint.packageManager": "yarn",
   // "vetur.validation.template": false
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

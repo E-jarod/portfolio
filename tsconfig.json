@@ -82,6 +82,7 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@shared/*": ["src/app/shared/*"],
+      "@services/*": ["src/app/shared/services/*"],
       "@components/*": ["src/app/shared/components/*"],
       "@layouts/*": ["src/app/shared/layouts/*"]
     }
