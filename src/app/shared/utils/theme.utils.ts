@@ -2,14 +2,15 @@ import { localStorageService } from '@services/local-storage.service';
 
 const lsThemeKey = 'isDark';
 
-const updateThemeInDom = (isDark: boolean): void => {
+const updateDomDarkMode = (isDark: boolean): void => {
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-  const cond =
-    lsThemeKey in localStorageService.localStorage &&
+  const darkModeCondition =
+    lsThemeKey in localStorage &&
     window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const { classList: htmlTagClassList } = document.documentElement;
 
-  if (isDark || cond) document.documentElement.classList.add('dark');
-  else document.documentElement.classList.remove('dark');
+  if (isDark || darkModeCondition) htmlTagClassList.add('dark');
+  else htmlTagClassList.remove('dark');
 };
 
 export const initTheme = (): void => {
@@ -18,7 +19,7 @@ export const initTheme = (): void => {
 
   const isDark = getIsDarkFromLS();
 
-  updateThemeInDom(isDark);
+  updateDomDarkMode(isDark);
 };
 
 export const getIsDarkFromLS = (): boolean =>
@@ -27,5 +28,5 @@ export const getIsDarkFromLS = (): boolean =>
 export const changeTheme = (): void => {
   const newTheme = !getIsDarkFromLS();
   localStorageService.setItem(lsThemeKey, newTheme);
-  updateThemeInDom(newTheme);
+  updateDomDarkMode(newTheme);
 };
