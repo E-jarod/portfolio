@@ -1,43 +1,26 @@
 <script setup lang="ts">
 import { changeTheme } from '@utils/theme.utils';
+
+const openMobileModal = () => {
+  console.log('open mobile modal');
+};
+
+const openThemeModal = () => {
+  changeTheme();
+  console.log('open theme modal');
+};
 </script>
 
 <template>
   <div class="flex items-center">
-    <button
-      type="button"
-      class="text-slate-500 hover:text-slate-600 w-8 h-8 -my-1 flex items-center justify-center md:hidden dark:hover:text-slate-300"
-    >
-      <span class="sr-only">Search</span>
-      <svg
-        width="24"
-        height="24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="m19 19-3.5-3.5"></path>
-        <circle cx="11" cy="11" r="6"></circle>
-      </svg>
-    </button>
     <div class="-my-1 ml-2 -mr-1 md:hidden">
       <button
         type="button"
         class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
+        @click="openMobileModal()"
       >
-        <span class="sr-only">Navigation</span
-        ><svg width="24" height="24" fill="none" aria-hidden="true">
-          <path
-            d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
+        <span class="sr-only">Navigation</span>
+        <fa-icon icon="ellipsis-v" size="lg"></fa-icon>
       </button>
     </div>
     <div class="hidden md:flex items-center">
@@ -94,9 +77,19 @@ import { changeTheme } from '@utils/theme.utils';
           aria-haspopup="true"
           aria-expanded="false"
           aria-labelledby="headlessui-listbox-label-2 headlessui-listbox-button-3"
-          @click="changeTheme()"
+          @click="openThemeModal()"
         >
-          <span class="dark:hidden">
+          <fa-icon
+            class="dark:hidden rounded-full hover:bg-sky-400/20 text-sky-500"
+            :icon="['far', 'sun']"
+            size="lg"
+          ></fa-icon>
+          <fa-icon
+            class="hidden dark:inline shadow-sm hover:shadow-sky-500 rounded-full bg-sky-400/20 text-sky-500"
+            :icon="['far', 'moon']"
+            size="lg"
+          ></fa-icon>
+          <!-- <span class="dark:hidden">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -114,8 +107,8 @@ import { changeTheme } from '@utils/theme.utils';
                 class="stroke-sky-500"
               ></path>
             </svg>
-          </span>
-          <span class="hidden dark:inline">
+          </span> -->
+          <!-- <span class="hidden dark:inline">
             <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
               <path
                 fill-rule="evenodd"
@@ -134,10 +127,12 @@ import { changeTheme } from '@utils/theme.utils';
                 class="fill-sky-500"
               ></path>
             </svg>
-          </span>
+          </span> -->
         </button>
         <a
           href="https://github.com/E-jarod"
+          target="_blank"
+          rel="noopener noreferer"
           class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
         >
           <span class="sr-only">EJILANE Jarod on GitHub</span>
@@ -145,6 +140,8 @@ import { changeTheme } from '@utils/theme.utils';
         </a>
         <a
           href="https://www.linkedin.com/in/e-jarod/"
+          target="_blank"
+          rel="noopener noreferer"
           class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
         >
           <span class="sr-only">EJILANE Jarod on Linkedin</span>
