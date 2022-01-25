@@ -1,25 +1,21 @@
 <script setup lang="ts">
 import { onMounted, reactive } from 'vue';
 
-const state = reactive({
+import { updateProfileImage } from './image-saver.utils';
+
+const state = reactive<{ profileImage: string }>({
   profileImage: '',
 });
 
-const updateProfileImage = async (sizeInPixels = 48): Promise<string> => {
-  const { url } = await fetch(
-    `https://avatars.githubusercontent.com/E-jarod?size=${sizeInPixels}`,
-  );
-  return url ?? '';
-};
-
 onMounted(async () => {
-  state.profileImage = await updateProfileImage();
+  state.profileImage = (await updateProfileImage()) ?? '';
 });
 </script>
 
 <template>
   <figure class="flex items-center justify-between">
     <img
+      id="profilePicture"
       class="rounded-full h-8 w-8"
       :src="state.profileImage"
       alt="img"
