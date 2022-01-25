@@ -1,9 +1,0 @@
-<template>
-  <div>
-    <div>Home</div>
-    <div>CV</div>
-    <div>Compétences</div>
-    <div>Formations</div>
-    <div>Contact</div>
-  </div>
-</template>

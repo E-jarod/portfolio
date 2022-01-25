@@ -82,9 +82,16 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@shared/*": ["src/app/shared/*"],
+      "@utils/*": ["src/app/shared/utils/*"],
+      "@services/*": ["src/app/shared/services/*"],
       "@components/*": ["src/app/shared/components/*"],
       "@layouts/*": ["src/app/shared/layouts/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
 }
