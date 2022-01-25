@@ -20,6 +20,7 @@ const closeModal = (): void => {
       class="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80"
       id="headlessui-dialog-overlay-7"
       aria-hidden="true"
+      @click="closeModal()"
     ></div>
     <div
       class="fixed top-4 right-4 w-full max-w-xs bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5"
@@ -53,6 +54,7 @@ const closeModal = (): void => {
             class="hover:text-sky-500 dark:hover:text-sky-400"
             :to="link.to"
             v-text="link.label"
+            @click="closeModal()"
           ></router-link>
         </li>
       </ul>
@@ -64,6 +66,7 @@ const closeModal = (): void => {
             target="_blank"
             rel="noopener noreferer"
             v-text="link.label"
+            @click="closeModal()"
           ></a>
         </li>
       </ul>
