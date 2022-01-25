@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
 
-import HeaderRoutesMobileModal from './HeaderRoutesMobileModal.vue';
+import HeaderMobileRoutesModal from './HeaderMobilesRoutesModal.vue';
 import HeaderThemeToggler from './HeaderThemeToggler.vue';
 import { navLinks, socialNavLinks } from './header-nav-links.utils';
 
@@ -31,7 +31,7 @@ const openMobileModal = () => {
         <ul class="flex items-center space-x-8">
           <li v-for="(link, index) in navLinks" :key="index">
             <router-link
-              class="hover:text-sky-500 dark:hover:text-sky-400"
+              class="hover:text-red-500 dark:hover:text-red-400"
               :to="link.to"
               v-text="link.label"
             ></router-link>
@@ -58,7 +58,7 @@ const openMobileModal = () => {
       </nav>
     </div>
   </div>
-  <HeaderRoutesMobileModal
+  <HeaderMobileRoutesModal
     :open-modal="state.openModal"
     @keep-open="state.openModal = $event"
   />

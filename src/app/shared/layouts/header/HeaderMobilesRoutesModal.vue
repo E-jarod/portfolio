@@ -51,7 +51,7 @@ const closeModal = (): void => {
       >
         <li v-for="(link, index) in navLinks" :key="index">
           <router-link
-            class="hover:text-sky-500 dark:hover:text-sky-400"
+            class="hover:text-red-500 dark:hover:text-red-400"
             :to="link.to"
             v-text="link.label"
             @click="closeModal()"
@@ -61,7 +61,7 @@ const closeModal = (): void => {
       <ul class="space-y-6">
         <li v-for="(link, index) in socialNavLinks" :key="index">
           <a
-            class="hover:text-sky-500 dark:hover:text-sky-400"
+            class="hover:text-red-500 dark:hover:text-red-400"
             :href="link.socialLink"
             target="_blank"
             rel="noopener noreferer"
