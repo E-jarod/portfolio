@@ -2,7 +2,7 @@
 import { onMounted } from 'vue';
 
 import TheHeader from '@app/shared/layouts/header/TheHeader.vue';
-import TheFooter from '@app/shared/layouts/footer/TheFooter.vue';
+// import TheFooter from '@app/shared/layouts/footer/TheFooter.vue';
 
 import { initTheme } from '@utils/theme.utils';
 
@@ -11,8 +11,8 @@ onMounted(() => initTheme());
 
 <template>
   <TheHeader />
-  <main class="flex flex-col">
+  <main class="flex flex-col px-4 sm:px-6 md:px-8">
     <router-view />
   </main>
-  <TheFooter />
+  <!-- <TheFooter /> -->
 </template>
