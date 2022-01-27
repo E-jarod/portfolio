@@ -11,7 +11,7 @@ onMounted(() => initTheme());
 
 <template>
   <TheHeader />
-  <main class="flex flex-col px-4 sm:px-6 md:px-8">
+  <main class="flex flex-col px-4 print:p-0 print:m-0 sm:px-6 md:px-8">
     <router-view />
   </main>
   <!-- <TheFooter /> -->

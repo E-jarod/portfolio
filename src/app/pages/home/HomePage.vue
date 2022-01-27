@@ -5,7 +5,7 @@
     >
       Jarod Ejilane,<br />
       the
-      <span class="text-red-500 dark:text-red-400">TypeScript</span
+      <span class="text-red-500 dark:text-red-400">JavaScript</span
       ><br class="lg:hidden" />
       Developer you need
     </h1>

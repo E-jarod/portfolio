@@ -1,3 +1,3 @@
 <template>
-  <h1>Footer</h1>
+  <footer class="print:hidden">Footer</footer>
 </template>
