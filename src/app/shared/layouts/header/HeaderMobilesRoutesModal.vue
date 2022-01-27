@@ -23,11 +23,11 @@ const closeModal = (): void => {
       @click="closeModal()"
     ></div>
     <div
-      class="fixed top-4 right-4 w-full max-w-xs bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5"
+      class="fixed w-full max-w-xs p-6 text-base font-semibold bg-white rounded-lg shadow-lg top-4 right-4 text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5"
     >
       <button
         type="button"
-        class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
+        class="absolute flex items-center justify-center w-8 h-8 top-5 right-5 text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300"
         tabindex="0"
         @click="closeModal()"
       >
@@ -47,7 +47,7 @@ const closeModal = (): void => {
         </svg>
       </button>
       <ul
-        class="space-y-6 mb-6 pb-6 border-b border-slate-200 dark:border-slate-200/10"
+        class="pb-6 mb-6 space-y-6 border-b border-slate-200 dark:border-slate-200/10"
       >
         <li v-for="(link, index) in navLinks" :key="index">
           <router-link
@@ -71,17 +71,17 @@ const closeModal = (): void => {
         </li>
       </ul>
       <div
-        class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10"
+        class="pt-6 mt-6 border-t border-slate-200 dark:border-slate-200/10"
       >
         <div class="flex items-center justify-between">
           <label
             for="theme"
-            class="text-slate-700 font-normal dark:text-slate-400"
+            class="font-normal text-slate-700 dark:text-slate-400"
           >
             Switch theme
           </label>
           <HeaderThemeToggler
-            class="w-16 relative flex justify-center items-center ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2 text-slate-700 font-semibold dark:bg-slate-600 dark:ring-0 dark:highlight-white/5 dark:text-slate-200"
+            class="relative flex items-center justify-center w-16 p-2 font-semibold rounded-lg shadow-sm ring-1 ring-slate-900/10 text-slate-700 dark:bg-slate-600 dark:ring-0 dark:highlight-white/5 dark:text-slate-200"
           />
         </div>
       </div>

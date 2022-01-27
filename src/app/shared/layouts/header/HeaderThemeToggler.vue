@@ -17,12 +17,12 @@ import { changeTheme } from '@utils/theme.utils';
       v-text="'Theme'"
     ></label>
     <!-- <fa-icon
-      class="dark:hidden text-red-500"
+      class="text-red-500 dark:hidden"
       :icon="['far', 'sun']"
       size="lg"
     ></fa-icon>
     <fa-icon
-      class="hidden dark:inline text-red-500"
+      class="hidden text-red-500 dark:inline"
       :icon="['far', 'moon']"
       size="lg"
     ></fa-icon> -->
