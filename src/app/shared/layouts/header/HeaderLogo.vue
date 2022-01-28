@@ -16,7 +16,7 @@ onMounted(async () => {
   <figure class="flex items-center justify-between">
     <img
       id="profilePicture"
-      class="rounded-full h-8 w-8"
+      class="w-8 h-8 rounded-full"
       :src="state.profileImage"
       alt="img"
     />

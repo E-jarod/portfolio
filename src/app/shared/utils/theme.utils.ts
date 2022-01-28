@@ -15,7 +15,7 @@ const updateDomDarkMode = (isDark: boolean): void => {
 
 export const initTheme = (): void => {
   if (localStorageService.getItem<boolean>(lsThemeKey) == null)
-    localStorageService.setItem(lsThemeKey, false);
+    localStorageService.setItem(lsThemeKey, true);
 
   const isDark = getIsDarkFromLS();
 
