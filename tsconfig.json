@@ -47,7 +47,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     // "preserveSymlinks": false,
     //
     /// BACKWARDS COMPATIBILITY ///
