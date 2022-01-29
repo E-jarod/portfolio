@@ -25,13 +25,13 @@
     </p>
     <div class="flex justify-center mt-6 space-x-6 text-sm sm:mt-10">
       <router-link
-        class="flex items-center justify-center w-1/2 h-12 px-0 font-semibold text-white rounded-lg bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 md:w-96 sm:px-6 dark:bg-red-500 dark:highlight-white/20 dark:hover:bg-red-400"
+        class="flex items-center justify-center w-1/2 h-12 px-0 font-semibold text-white rounded-2xl bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 md:w-96 sm:px-6 dark:bg-red-500 dark:highlight-white/20 dark:hover:bg-red-400"
         to="/skills"
       >
         View my projects
       </router-link>
       <a
-        class="flex items-center justify-center w-1/2 h-12 px-0 font-semibold bg-white rounded-lg shadow-sm sm:px-6 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-400 md:w-60 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
+        class="flex items-center justify-center w-1/2 h-12 px-0 font-semibold bg-white shadow-sm rounded-2xl sm:px-6 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-400 md:w-60 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
         href="https://devfamily.fr/"
         target="_blank"
         rel="noopener noreferer"
