@@ -28,7 +28,7 @@ const print = () => {
       class="flex items-center justify-center w-1/2 h-12 px-0 font-semibold bg-white shadow-sm rounded-2xl sm:px-6 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-400 md:w-60 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
       @click="state.openCv = !state.openCv"
     >
-      Toggle preview
+      Toggle view
     </button>
   </div>
 
@@ -94,6 +94,7 @@ const print = () => {
   @apply my-[calc(100/23*1vw)] w-[calc(100/23*21vw)] h-[calc(100/23*29.7vw)];
   /* print styling */
   @apply print:flex print:m-0 print:break-after-page print:w-[21cm] print:h-[29.7cm] print:border-0 print:rounded-none;
+  color-adjust: exact;
 }
 /* @page {
   size: A4;
