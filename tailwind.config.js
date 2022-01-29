@@ -22,6 +22,10 @@ const vwSpacingFunction = (eachTwSpacing) => {
 };
 
 const vwSpacing = vwSpacingFunction(Object.entries(defaultTheme.spacing));
+const vwFontSize = vwSpacingFunction(
+  Object.entries(defaultTheme.fontSize).map(([k, v]) => [k, v[0]]),
+);
+console.log(vwFontSize);
 
 module.exports = {
   darkMode: 'class',
@@ -30,6 +34,9 @@ module.exports = {
     extend: {
       spacing: {
         ...vwSpacing,
+      },
+      fontSize: {
+        ...vwFontSize,
       },
     },
   },

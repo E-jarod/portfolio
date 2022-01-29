@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['stylelint-config-standard'],
   rules: {
-    indentation: 4,
+    indentation: 2,
     'at-rule-no-unknown': [
       true,
       {
