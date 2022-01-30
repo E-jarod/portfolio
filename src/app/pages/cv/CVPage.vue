@@ -23,6 +23,7 @@ const print = () => {
     >
       Print CV
     </button>
+    <!-- TODO: Toggle skeleton view (mobile) / normal view (desktop) -->
     <button
       type="button"
       class="flex items-center justify-center w-1/2 h-12 px-0 font-semibold bg-white shadow-sm rounded-2xl sm:px-6 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-400 md:w-60 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"

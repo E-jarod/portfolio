@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-5xl pt-20 mx-auto sm:pt-24 lg:pt-32">
+  <div class="flex flex-col items-stretch justify-center flex-grow w-full">
     <h1
       class="text-4xl font-extrabold tracking-tight text-center text-slate-900 sm:text-5xl lg:text-6xl dark:text-white"
     >
