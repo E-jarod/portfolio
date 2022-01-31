@@ -2,7 +2,7 @@
 import { onMounted } from 'vue';
 
 import TheHeader from '@app/shared/layouts/header/TheHeader.vue';
-// import TheFooter from '@app/shared/layouts/footer/TheFooter.vue';
+import TheFooter from '@app/shared/layouts/footer/TheFooter.vue';
 
 import { initTheme } from '@utils/theme.utils';
 
@@ -16,11 +16,11 @@ onMounted(() => initTheme());
   >
     <router-view />
   </main>
-  <!-- <TheFooter /> -->
+  <TheFooter />
 </template>
 
-<style>
+<!-- <style>
 :root {
   color-scheme: dark light;
 }
-</style>
+</style> -->
