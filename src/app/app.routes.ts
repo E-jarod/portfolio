@@ -8,7 +8,7 @@ export const appRoutes: RouteRecordRaw[] = [
   },
   {
     path: '/cv',
-    component: () => import('./pages/cv/CVPage.vue'),
+    component: () => import('./pages/cv/CvPage.vue'),
   },
   {
     path: '/contact',
