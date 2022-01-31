@@ -18,3 +18,9 @@ onMounted(() => initTheme());
   </main>
   <!-- <TheFooter /> -->
 </template>
+
+<style>
+:root {
+  color-scheme: dark light;
+}
+</style>
