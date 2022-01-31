@@ -1,16 +1,14 @@
-import { localStorageService } from '@services/local-storage.service';
+import { localStorageService as ls } from '@services/local-storage.service';
 
 const lsThemeKey = 'isDark';
+const colorSchemeMedia = '(prefers-color-scheme: dark)';
+const { matches: systemDefaultIsDark } =
+  window.matchMedia(colorSchemeMedia);
 
 const updateDomDarkMode = (isDark: boolean): void => {
-  const keyNotExists = !(lsThemeKey in localStorageService.localStorage);
-  const mediaString = '(prefers-color-scheme: dark)';
-  const { matches: systemDefaultIsDark } = window.matchMedia(mediaString);
+  const keyNotExists = !(lsThemeKey in localStorage);
   const darkModeCondition =
     isDark || (keyNotExists && systemDefaultIsDark);
-  // alert(
-  //   `${darkModeCondition.toString()}: ${isDark.toString()} || (${keyNotExists.toString()} && ${systemDefaultIsDark.toString()})`,
-  // );
 
   document.documentElement.setAttribute('data-dark', 'true');
   const { documentElement: htmlTag } = document;
@@ -20,10 +18,9 @@ const updateDomDarkMode = (isDark: boolean): void => {
 };
 
 export const initTheme = (): void => {
-  if (localStorageService.getItem<boolean>(lsThemeKey) == null)
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-      localStorageService.setItem(lsThemeKey, true);
-    else localStorageService.setItem(lsThemeKey, false);
+  if (ls.getItem<boolean>(lsThemeKey) == null)
+    if (systemDefaultIsDark) ls.setItem(lsThemeKey, true);
+    else ls.setItem(lsThemeKey, false);
 
   const isDark = getIsDarkFromLS();
 
@@ -31,10 +28,10 @@ export const initTheme = (): void => {
 };
 
 export const getIsDarkFromLS = (): boolean =>
-  localStorageService.getItem<boolean>(lsThemeKey) ?? false;
+  ls.getItem<boolean>(lsThemeKey) ?? false;
 
 export const changeTheme = (): void => {
   const newTheme = !getIsDarkFromLS();
-  localStorageService.setItem(lsThemeKey, newTheme);
+  ls.setItem(lsThemeKey, newTheme);
   updateDomDarkMode(newTheme);
 };
