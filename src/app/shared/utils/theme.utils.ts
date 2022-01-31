@@ -3,16 +3,19 @@ import { localStorageService } from '@services/local-storage.service';
 const lsThemeKey = 'isDark';
 
 const updateDomDarkMode = (isDark: boolean): void => {
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  const keyNotExists = !(lsThemeKey in localStorageService.localStorage);
+  const mediaString = '(prefers-color-scheme: dark)';
+  const { matches: systemDefaultIsDark } = window.matchMedia(mediaString);
   const darkModeCondition =
-    lsThemeKey in localStorage &&
-    window.matchMedia('(prefers-color-scheme: light)').matches;
-  console.log(window.matchMedia('(prefers-color-scheme: light)'));
+    isDark || (keyNotExists && systemDefaultIsDark);
+  // alert(
+  //   `${darkModeCondition.toString()}: ${isDark.toString()} || (${keyNotExists.toString()} && ${systemDefaultIsDark.toString()})`,
+  // );
 
   document.documentElement.setAttribute('data-dark', 'true');
   const { documentElement: htmlTag } = document;
 
-  if (isDark || darkModeCondition) htmlTag.classList.add('dark');
+  if (darkModeCondition) htmlTag.classList.add('dark');
   else htmlTag.classList.remove('dark');
 };
 
