@@ -7,5 +7,6 @@
     <div class="w-32vw h-32vw rounded-3xl bg-sky-300"></div>
     <div class="w-32vw h-32vw rounded-3xl bg-sky-300"></div>
     <div class="w-32vw h-32vw rounded-3xl bg-sky-300"></div>
+    <div class="w-32vw h-32vw rounded-3xl bg-sky-300"></div>
   </div>
 </template>
