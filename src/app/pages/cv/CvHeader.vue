@@ -2,7 +2,11 @@
   <div
     class="flex items-center justify-between space-x-6vw p-6vw bg-sky-100 rounded-3xl h-56vw print:rounded-t-none"
   >
-    <div class="flex-shrink-0 w-40vw h-40vw rounded-3xl bg-sky-300"></div>
+    <img
+      class="flex-shrink-0 rounded-3xl h-40vw w-40vw"
+      src="https://media-exp1.licdn.com/dms/image/C4E03AQFIJ91PIv2sbg/profile-displayphoto-shrink_200_200/0/1616836146324?e=1649289600&v=beta&t=m9lYstXRK2wYubKlqDXOLVsGr-2ycKiXFhATW-1oa8w"
+      alt=""
+    />
     <div class="flex-grow">Jarod EJILANE</div>
   </div>
   <!-- TODO: curve -->
