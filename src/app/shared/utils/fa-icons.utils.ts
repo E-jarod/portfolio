@@ -1,6 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEllipsisV,
+  faGlobeAmericas,
+  faGlobeAsia,
+  faGlobeEurope,
+} from '@fortawesome/free-solid-svg-icons';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 import {
   faDiscord,
@@ -12,7 +17,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 // solid
-library.add(faEllipsisV);
+library.add(faEllipsisV, faGlobeEurope, faGlobeAmericas, faGlobeAsia);
 // regular
 library.add(faMoon, faSun);
 // brands

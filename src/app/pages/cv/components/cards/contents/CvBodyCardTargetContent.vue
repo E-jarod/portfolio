@@ -26,24 +26,24 @@ const trad = reactive({
 </script>
 
 <template>
-  <ul class="list-disc pl-6vw text-xlvw">
+  <ul class="list-disc pl-12vw sm:pl-6vw text-xlvw">
     <transition name="slide" mode="out-in">
       <li :key="trad.becomeExpert">
         <span v-text="trad.becomeExpert"></span>
-        <em class="not-italic font-bold">expert</em>
+        <em class="italic font-bold">expert</em>
         <span v-text="trad.becomeExpertEnding"></span>
       </li>
     </transition>
     <transition name="slide" mode="out-in">
       <li :key="trad.itConcepts">
         <span v-text="trad.discoverNew"></span>
-        <em class="not-italic font-bold" v-text="trad.itConcepts"></em>
+        <em class="italic font-bold" v-text="trad.itConcepts"></em>
       </li>
     </transition>
     <transition name="slide" mode="out-in">
       <li :key="trad.become">
         <span v-text="trad.become"></span>
-        <em class="not-italic font-bold" v-text="trad.projectManager"></em>
+        <em class="italic font-bold" v-text="trad.projectManager"></em>
       </li>
     </transition>
   </ul>

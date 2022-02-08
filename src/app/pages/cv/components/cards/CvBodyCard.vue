@@ -3,7 +3,10 @@ defineProps<{ isRed?: boolean; title: string }>();
 </script>
 
 <template>
-  <div class="p-3vw h-44vw rounded-3xl bg-slate-100">
+  <div
+    class="p-3vw h-44vw rounded-3xl"
+    :class="{ 'bg-red-100': isRed, 'bg-slate-100': !isRed }"
+  >
     <transition name="slide" mode="out-in">
       <h3
         :key="title"
