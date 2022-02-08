@@ -1,7 +1,7 @@
 export const navLinks = [
   {
     to: '/home',
-    label: 'Acceuil',
+    label: 'Home',
   },
   {
     to: '/cv',
@@ -9,11 +9,11 @@ export const navLinks = [
   },
   {
     to: '/skills',
-    label: 'Compétences',
+    label: 'Skills',
   },
   {
     to: '/school',
-    label: 'Formations',
+    label: 'Background',
   },
   {
     to: '/contact',
