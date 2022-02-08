@@ -17,55 +17,55 @@ const trad = reactive({
 <template>
   <ul class="list-none text-xlvw px-4vw">
     <li>
-      <transition name="slide" mode="out-in">
-        <div
-          :key="trad.french"
-          class="inline-flex items-center justify-between w-full"
-        >
-          <div class="inline-flex items-center space-x-4vw">
-            <fa-icon :icon="['fas', 'globe-europe']"></fa-icon>
-            <span v-text="trad.french"></span>
-          </div>
+      <div class="inline-flex items-center justify-between w-full">
+        <div class="inline-flex items-center space-x-4vw">
+          <fa-icon size="lg" :icon="['fas', 'globe-europe']"></fa-icon>
+          <transition name="slide" mode="out-in">
+            <span :key="trad.french" v-text="trad.french"></span>
+          </transition>
+        </div>
+        <transition name="slide" mode="out-in">
           <span
+            :key="trad.nativeLevel"
             class="mx-auto italic font-bold text-xlvw"
             v-text="trad.nativeLevel"
           ></span>
-        </div>
-      </transition>
+        </transition>
+      </div>
     </li>
     <li>
-      <transition name="slide" mode="out-in">
-        <div
-          :key="trad.english"
-          class="inline-flex items-center justify-between w-full"
-        >
-          <div class="inline-flex items-center space-x-4vw">
-            <fa-icon :icon="['fas', 'globe-americas']"></fa-icon>
-            <span v-text="trad.english"></span>
-          </div>
+      <div class="inline-flex items-center justify-between w-full">
+        <div class="inline-flex items-center space-x-4vw">
+          <fa-icon size="lg" :icon="['fas', 'globe-americas']"></fa-icon>
+          <transition name="slide" mode="out-in">
+            <span :key="trad.english" v-text="trad.english"></span>
+          </transition>
+        </div>
+        <transition name="slide" mode="out-in">
           <span
+            :key="trad.fluentLevel"
             class="mx-auto italic font-bold text-xlvw"
             v-text="trad.fluentLevel"
           ></span>
-        </div>
-      </transition>
+        </transition>
+      </div>
     </li>
     <li>
-      <transition name="slide" mode="out-in">
-        <div
-          :key="trad.tamil"
-          class="inline-flex items-center justify-between w-full"
-        >
-          <div class="inline-flex items-center space-x-4vw">
-            <fa-icon :icon="['fas', 'globe-asia']"></fa-icon>
-            <span v-text="trad.tamil"></span>
-          </div>
+      <div class="inline-flex items-center justify-between w-full">
+        <div class="inline-flex items-center space-x-4vw">
+          <fa-icon size="lg" :icon="['fas', 'globe-asia']"></fa-icon>
+          <transition name="slide" mode="out-in">
+            <span :key="trad.tamil" v-text="trad.tamil"></span>
+          </transition>
+        </div>
+        <transition name="slide" mode="out-in">
           <span
+            :key="trad.nativeLevel"
             class="mx-auto italic font-bold text-xlvw"
             v-text="trad.nativeLevel"
           ></span>
-        </div>
-      </transition>
+        </transition>
+      </div>
     </li>
   </ul>
 </template>

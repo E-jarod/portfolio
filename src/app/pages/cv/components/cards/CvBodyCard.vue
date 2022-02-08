@@ -1,11 +1,23 @@
 <script setup lang="ts">
-defineProps<{ isRed?: boolean; title: string }>();
+defineProps<{
+  isRed?: boolean;
+  title: string;
+  height?: string;
+}>();
 </script>
 
 <template>
   <div
-    class="p-3vw h-44vw rounded-3xl"
-    :class="{ 'bg-red-100': isRed, 'bg-slate-100': !isRed }"
+    class="p-3vw rounded-3xl"
+    :class="[
+      height,
+      {
+        'bg-red-100': isRed,
+        'bg-slate-100': !isRed,
+        'h-44vw': !height,
+        'flex-grow': height === 'flex-grow',
+      },
+    ]"
   >
     <transition name="slide" mode="out-in">
       <h3
