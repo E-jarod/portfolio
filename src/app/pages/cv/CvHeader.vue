@@ -45,8 +45,8 @@ const copy = async () =>
             class="block font-normal transition-all text-slate-900 text-4xlvw"
           >
             <span v-if="!isEnglish" v-text="jobTitle"></span>
-            <em class="not-italic font-bold text-red-600">TypeScript</em> &
-            <em class="not-italic font-bold text-sky-600">Flutter</em>
+            <em class="not-italic font-bold text-red-500">TypeScript</em> &
+            <em class="not-italic font-bold text-sky-500">Flutter</em>
             <span v-if="isEnglish" v-text="jobTitle"></span>
           </strong>
         </transition>

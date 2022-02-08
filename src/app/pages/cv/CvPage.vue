@@ -33,7 +33,7 @@ provide('is-english', readonly(isEnglish));
     </button>
     <button
       type="button"
-      class="relative flex justify-center px-0 sm:px-6 bg-opacity-40 rounded-3xl bg-slate-600"
+      class="relative flex justify-center px-6 bg-opacity-40 rounded-3xl bg-slate-600"
       :class="{ hidden: !openCv }"
       @click="switchLanguage()"
     >
@@ -66,5 +66,5 @@ provide('is-english', readonly(isEnglish));
     </button> -->
   </div>
 
-  <CvViewBox :open-cv="openCv" />
+  <CvViewBox />
 </template>

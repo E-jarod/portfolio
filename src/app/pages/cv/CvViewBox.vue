@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import { inject } from 'vue';
+
 import CvHeader from './CvHeader.vue';
 import CvBody from './CvBody.vue';
 import CvFooter from './CvFooter.vue';
+import { ProvidedOpenCv } from './cv.model';
 
-interface Props {
-  openCv: boolean;
-}
-defineProps<Props>();
+const openCv = inject('open-cv') as ProvidedOpenCv;
 </script>
 
 <template>
