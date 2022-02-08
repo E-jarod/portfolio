@@ -53,7 +53,7 @@ const copy = async () =>
         <transition name="slide" mode="out-in">
           <span
             :key="availableText"
-            class="block text-slate-500 text-xlvw"
+            class="block italic text-slate-500 text-xlvw"
             v-text="availableText"
           ></span>
         </transition>
