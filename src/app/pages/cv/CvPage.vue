@@ -8,9 +8,6 @@ const state = reactive({
   isEnglish: false,
 });
 
-const enFlag = 'src/assets/usa.svg';
-const frFlag = 'src/assets/france.svg';
-
 const print = (): void => window.print();
 
 const toggleView = (): void => {
@@ -44,7 +41,7 @@ const switchLanguage = (): void => {
         :class="{
           'absolute -z-10 w-9 h-9 -top-1 -right-1': !state.isEnglish,
         }"
-        :src="enFlag"
+        src="/usa.svg"
         alt="EN"
       />
       <img
@@ -52,7 +49,7 @@ const switchLanguage = (): void => {
         :class="{
           'absolute -z-10 w-9 h-9 -top-1 -right-1': state.isEnglish,
         }"
-        :src="frFlag"
+        src="/france.svg"
         alt="FR"
       />
     </button>
