@@ -12,7 +12,7 @@ defineProps<{ isRed?: boolean; title: string }>();
         v-text="title"
       ></h3>
     </transition>
-    <div class="flex flex-col">
+    <div class="flex flex-col text-basevw text-slate-600">
       <slot></slot>
     </div>
   </div>
