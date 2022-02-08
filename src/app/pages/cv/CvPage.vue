@@ -32,14 +32,15 @@ const switchLanguage = (): void => {
     </button>
     <button
       type="button"
-      class="relative flex justify-center p-0 focus-visible:border-none focus:border-none"
+      class="relative flex justify-center px-0 sm:px-6 bg-opacity-40 rounded-3xl bg-slate-600"
       :class="{ hidden: !state.openCv }"
       @click="switchLanguage()"
     >
       <img
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
-          'absolute -z-10 w-9 h-9 -top-1 -right-1': !state.isEnglish,
+          'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':
+            !state.isEnglish,
         }"
         src="/usa.svg"
         alt="EN"
@@ -47,7 +48,8 @@ const switchLanguage = (): void => {
       <img
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
-          'absolute -z-10 w-9 h-9 -top-1 -right-1': state.isEnglish,
+          'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':
+            state.isEnglish,
         }"
         src="/france.svg"
         alt="FR"
