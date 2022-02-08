@@ -18,5 +18,6 @@ export default defineConfig({
       '@layouts': path.resolve(__dirname, './src/app/shared/layouts'),
     },
   },
+  publicDir: 'src/assets',
   plugins: [vue(), eslintPlugin()],
 });
