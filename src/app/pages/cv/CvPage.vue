@@ -1,22 +1,23 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { provide, readonly, ref } from 'vue';
 
 import CvViewBox from './CvViewBox.vue';
 
-const state = reactive({
-  openCv: true,
-  isEnglish: false,
-});
+const openCv = ref(true);
+const isEnglish = ref(false);
 
 const print = (): void => window.print();
 
 const toggleView = (): void => {
-  state.openCv = !state.openCv;
+  openCv.value = !openCv.value;
 };
 
 const switchLanguage = (): void => {
-  state.isEnglish = !state.isEnglish;
+  isEnglish.value = !isEnglish.value;
 };
+
+provide('open-cv', readonly(openCv));
+provide('is-english', readonly(isEnglish));
 </script>
 
 <template>
@@ -33,14 +34,14 @@ const switchLanguage = (): void => {
     <button
       type="button"
       class="relative flex justify-center px-0 sm:px-6 bg-opacity-40 rounded-3xl bg-slate-600"
-      :class="{ hidden: !state.openCv }"
+      :class="{ hidden: !openCv }"
       @click="switchLanguage()"
     >
       <img
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
           'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':
-            !state.isEnglish,
+            !isEnglish,
         }"
         src="/usa.svg"
         alt="EN"
@@ -49,7 +50,7 @@ const switchLanguage = (): void => {
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
           'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':
-            state.isEnglish,
+            isEnglish,
         }"
         src="/france.svg"
         alt="FR"
@@ -65,5 +66,5 @@ const switchLanguage = (): void => {
     </button>
   </div>
 
-  <CvViewBox :open-cv="state.openCv" />
+  <CvViewBox :open-cv="openCv" />
 </template>
