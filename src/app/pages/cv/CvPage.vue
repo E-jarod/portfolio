@@ -1,22 +1,23 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { provide, readonly, ref } from 'vue';
 
 import CvViewBox from './CvViewBox.vue';
 
-const state = reactive({
-  openCv: true,
-  isEnglish: false,
-});
+const openCv = ref(true);
+const isEnglish = ref(false);
 
 const print = (): void => window.print();
 
-const toggleView = (): void => {
-  state.openCv = !state.openCv;
-};
+// const toggleView = (): void => {
+//   openCv.value = !openCv.value;
+// };
 
 const switchLanguage = (): void => {
-  state.isEnglish = !state.isEnglish;
+  isEnglish.value = !isEnglish.value;
 };
+
+provide('open-cv', readonly(openCv));
+provide('is-english', readonly(isEnglish));
 </script>
 
 <template>
@@ -32,14 +33,15 @@ const switchLanguage = (): void => {
     </button>
     <button
       type="button"
-      class="relative flex justify-center p-0 focus-visible:border-none focus:border-none"
-      :class="{ hidden: !state.openCv }"
+      class="relative flex justify-center px-0 sm:px-6 bg-opacity-40 rounded-3xl bg-slate-600"
+      :class="{ hidden: !openCv }"
       @click="switchLanguage()"
     >
       <img
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
-          'absolute -z-10 w-9 h-9 -top-1 -right-1': !state.isEnglish,
+          'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':
+            !isEnglish,
         }"
         src="/usa.svg"
         alt="EN"
@@ -47,21 +49,22 @@ const switchLanguage = (): void => {
       <img
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
-          'absolute -z-10 w-9 h-9 -top-1 -right-1': state.isEnglish,
+          'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':
+            isEnglish,
         }"
         src="/france.svg"
         alt="FR"
       />
     </button>
     <!-- TODO: Toggle skeleton view (mobile) / normal view (desktop) -->
-    <button
+    <!-- <button
       type="button"
       class="flex items-center justify-center w-40 h-12 px-0 font-semibold bg-white shadow-sm rounded-2xl sm:px-6 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-400 sm:w-44 md:w-52 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
       @click="toggleView()"
     >
       Toggle view
-    </button>
+    </button> -->
   </div>
 
-  <CvViewBox :open-cv="state.openCv" />
+  <CvViewBox :open-cv="openCv" />
 </template>

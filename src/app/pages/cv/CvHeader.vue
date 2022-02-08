@@ -1,16 +1,79 @@
+<script setup lang="ts">
+import { computed, inject } from 'vue';
+
+import { ProvidedIsEnglish } from './cv.model';
+import { getAvalaibleText, getRightMonth } from './cv-header.utils';
+
+const isEnglish = inject('is-english') as ProvidedIsEnglish;
+
+const availableAt = new Date('08/31/2021');
+const availableDate = computed(() =>
+  getRightMonth(availableAt, isEnglish.value),
+);
+const availableText = computed(() =>
+  getAvalaibleText(availableDate.value, isEnglish.value),
+);
+
+const jobTitle = computed(() =>
+  isEnglish.value ? ' Developer' : 'Développeur ',
+);
+
+const phoneNumber = computed(() =>
+  isEnglish.value ? '+33 7 68 45 86 63' : '07 68 45 86 63',
+);
+const copy = async () =>
+  await navigator.clipboard.writeText('ejilane.jarod');
+</script>
+
 <template>
   <div
-    class="flex items-center justify-between space-x-6vw p-6vw bg-sky-100 rounded-3xl h-56vw print:rounded-t-none"
+    class="flex items-center justify-between space-x-10vw p-6vw bg-sky-100 rounded-3xl h-56vw print:rounded-t-none"
   >
     <img
       class="flex-shrink-0 rounded-3xl h-40vw w-40vw"
       src="https://media-exp1.licdn.com/dms/image/C4E03AQFIJ91PIv2sbg/profile-displayphoto-shrink_200_200/0/1616836146324?e=1649289600&v=beta&t=m9lYstXRK2wYubKlqDXOLVsGr-2ycKiXFhATW-1oa8w"
       alt=""
     />
-    <div class="flex-grow">
-      <div class="font-bold text-blue-900 text-3xlvw">Jarod EJILANE</div>
-      <div class="text-slate-900 text-3xlvw">
-        Développeur TypeScript & Flutter
+    <div class="flex items-stretch justify-between flex-grow">
+      <div class="flex flex-col flex-grow">
+        <span class="block font-bold text-blue-900 text-4xlvw"
+          >Jarod EJILANE</span
+        >
+        <transition name="slide" mode="out-in">
+          <strong
+            :key="jobTitle"
+            class="block font-normal transition-all text-slate-900 text-4xlvw"
+          >
+            <span v-if="!isEnglish" v-text="jobTitle"></span>
+            <em class="not-italic font-bold text-red-600">TypeScript</em> &
+            <em class="not-italic font-bold text-sky-600">Flutter</em>
+            <span v-if="isEnglish" v-text="jobTitle"></span>
+          </strong>
+        </transition>
+        <transition name="slide" mode="out-in">
+          <span
+            :key="availableText"
+            class="block text-slate-500 text-xlvw"
+            v-text="availableText"
+          ></span>
+        </transition>
+      </div>
+      <div class="flex flex-col items-end justify-around flex-shrink-0">
+        <span
+          class="block font-bold print:cursor-pointer cursor-copy text-slate-600 text-2xlvw"
+          @click="copy()"
+          >ejilane.jarod<small class="text-mdvw text-slate-500"
+            >@gmail.com</small
+          ></span
+        >
+        <transition name="slide" mode="out-in">
+          <a
+            :key="phoneNumber"
+            :href="'tel:' + phoneNumber.split(' ').join('')"
+            class="block font-bold cursor-pointer print:cursor-text text-slate-600 text-2xlvw"
+            v-text="phoneNumber"
+          ></a>
+        </transition>
       </div>
     </div>
   </div>
@@ -33,7 +96,7 @@
     </div> -->
 </template>
 
-<style scoped>
+<!-- <style scoped>
 /* .wave {
   position: absolute;
   bottom: 0;
@@ -51,4 +114,4 @@
     fill: #ffffff;
   }
 } */
-</style>
+</style> -->
