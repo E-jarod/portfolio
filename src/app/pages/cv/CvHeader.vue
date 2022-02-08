@@ -7,7 +7,12 @@
       src="https://media-exp1.licdn.com/dms/image/C4E03AQFIJ91PIv2sbg/profile-displayphoto-shrink_200_200/0/1616836146324?e=1649289600&v=beta&t=m9lYstXRK2wYubKlqDXOLVsGr-2ycKiXFhATW-1oa8w"
       alt=""
     />
-    <div class="flex-grow">Jarod EJILANE</div>
+    <div class="flex-grow">
+      <div class="font-bold text-blue-900 text-3xlvw">Jarod EJILANE</div>
+      <div class="text-slate-900 text-3xlvw">
+        Développeur TypeScript & Flutter
+      </div>
+    </div>
   </div>
   <!-- TODO: curve -->
   <!-- <div

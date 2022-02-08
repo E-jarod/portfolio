@@ -53,6 +53,7 @@ const openMobileModal = () => {
             <span class="sr-only" v-text="link.srOnlyLabel"></span>
             <fa-icon :icon="link.icon" :size="link.iconSize"></fa-icon>
           </a>
+
           <HeaderThemeToggler />
         </ul>
       </nav>

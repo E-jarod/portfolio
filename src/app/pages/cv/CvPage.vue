@@ -5,12 +5,20 @@ import CvViewBox from './CvViewBox.vue';
 
 const state = reactive({
   openCv: true,
+  isEnglish: false,
 });
+
+const enFlag = 'src/assets/usa.svg';
+const frFlag = 'src/assets/france.svg';
 
 const print = (): void => window.print();
 
 const toggleView = (): void => {
   state.openCv = !state.openCv;
+};
+
+const switchLanguage = (): void => {
+  state.isEnglish = !state.isEnglish;
 };
 </script>
 
@@ -25,7 +33,29 @@ const toggleView = (): void => {
     >
       Print CV
     </button>
-
+    <button
+      type="button"
+      class="relative flex justify-center p-0 focus-visible:border-none focus:border-none"
+      :class="{ hidden: !state.openCv }"
+      @click="switchLanguage()"
+    >
+      <img
+        class="w-12 h-12 transition-all ease-in-out rounded-full"
+        :class="{
+          'absolute -z-10 w-9 h-9 -top-1 -right-1': !state.isEnglish,
+        }"
+        :src="enFlag"
+        alt="EN"
+      />
+      <img
+        class="w-12 h-12 transition-all ease-in-out rounded-full"
+        :class="{
+          'absolute -z-10 w-9 h-9 -top-1 -right-1': state.isEnglish,
+        }"
+        :src="frFlag"
+        alt="FR"
+      />
+    </button>
     <!-- TODO: Toggle skeleton view (mobile) / normal view (desktop) -->
     <button
       type="button"
