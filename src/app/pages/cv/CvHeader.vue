@@ -39,16 +39,24 @@ const copy = async () =>
         <span class="block font-bold text-blue-900 text-4xlvw"
           >Jarod EJILANE</span
         >
-        <strong class="block font-normal text-slate-900 text-4xlvw">
-          <span v-if="!isEnglish" v-text="jobTitle"></span>
-          <em class="not-italic font-bold text-red-600">TypeScript</em> &
-          <em class="not-italic font-bold text-sky-600">Flutter</em>
-          <span v-if="isEnglish" v-text="jobTitle"></span>
-        </strong>
-        <span
-          class="block text-slate-500 text-xlvw"
-          v-text="availableText"
-        ></span>
+        <transition name="slide" mode="out-in">
+          <strong
+            :key="jobTitle"
+            class="block font-normal transition-all text-slate-900 text-4xlvw"
+          >
+            <span v-if="!isEnglish" v-text="jobTitle"></span>
+            <em class="not-italic font-bold text-red-600">TypeScript</em> &
+            <em class="not-italic font-bold text-sky-600">Flutter</em>
+            <span v-if="isEnglish" v-text="jobTitle"></span>
+          </strong>
+        </transition>
+        <transition name="slide" mode="out-in">
+          <span
+            :key="availableText"
+            class="block text-slate-500 text-xlvw"
+            v-text="availableText"
+          ></span>
+        </transition>
       </div>
       <div class="flex flex-col items-end justify-around flex-shrink-0">
         <span
@@ -58,11 +66,14 @@ const copy = async () =>
             >@gmail.com</small
           ></span
         >
-        <a
-          :href="'tel:' + phoneNumber.split(' ').join('')"
-          class="block font-bold cursor-pointer print:cursor-text text-slate-600 text-2xlvw"
-          v-text="phoneNumber"
-        ></a>
+        <transition name="slide" mode="out-in">
+          <a
+            :key="phoneNumber"
+            :href="'tel:' + phoneNumber.split(' ').join('')"
+            class="block font-bold cursor-pointer print:cursor-text text-slate-600 text-2xlvw"
+            v-text="phoneNumber"
+          ></a>
+        </transition>
       </div>
     </div>
   </div>
