@@ -5,7 +5,6 @@ import {
   faBasketball,
   faCode,
   faEllipsisV,
-  faCode,
   faGlobeAmericas,
   faGlobeAsia,
   faGlobeEurope,
