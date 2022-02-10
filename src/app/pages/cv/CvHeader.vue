@@ -21,6 +21,11 @@ const jobTitle = computed(() =>
 const phoneNumber = computed(() =>
   isEnglish.value ? '+33 7 68 45 86 63' : '07 68 45 86 63',
 );
+
+const currentAge = computed(() =>
+  isEnglish.value ? '21 years old' : '21 ans',
+);
+
 const copy = async () =>
   await navigator.clipboard.writeText('ejilane.jarod');
 </script>
@@ -75,6 +80,13 @@ const copy = async () =>
           ></a>
         </transition>
         <!-- TODO: age calculator -->
+        <transition name="slide" mode="out-in">
+          <span
+            :key="currentAge"
+            class="block italic print:cursor-pointer cursor-copy text-slate-500 text-xlvw"
+            v-text="currentAge"
+          ></span>
+        </transition>
       </div>
     </div>
   </div>
