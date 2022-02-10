@@ -2,9 +2,14 @@
 import { computed, inject } from 'vue';
 
 import { ProvidedIsEnglish } from './cv.model';
-import { getAvalaibleText, getRightMonth } from './cv-header.utils';
+import {
+  getAvalaibleText,
+  getRightMonth,
+  getMyAge,
+} from './cv-header.utils';
 
 const isEnglish = inject('is-english') as ProvidedIsEnglish;
+const myAge = getMyAge();
 
 const availableAt = new Date('08/31/2021');
 const availableDate = computed(() =>
@@ -22,9 +27,9 @@ const phoneNumber = computed(() =>
   isEnglish.value ? '+33 7 68 45 86 63' : '07 68 45 86 63',
 );
 
-const currentAge = computed(() =>
-  isEnglish.value ? '21 years old' : '21 ans',
-);
+const currentAge = computed(() => {
+  return isEnglish.value ? `${myAge} years old` : `${myAge} ans`;
+});
 
 const copy = async () =>
   await navigator.clipboard.writeText('ejilane.jarod');
