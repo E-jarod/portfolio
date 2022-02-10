@@ -21,7 +21,7 @@ const titles = reactive({
 </script>
 
 <template>
-  <CvBodyCard :title="titles.target">
+  <CvBodyCard height="h-56vw" :title="titles.target">
     <CvBodyCardTargetContent />
   </CvBodyCard>
   <CvBodyCard is-red :title="titles.skills" height="flex-grow">
