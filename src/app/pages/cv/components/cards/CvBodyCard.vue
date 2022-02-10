@@ -8,12 +8,12 @@ defineProps<{
 
 <template>
   <div
-    class="p-3vw rounded-3xl"
+    class="flex flex-col p-3vw rounded-3xl"
     :class="[
       height,
       {
-        'bg-red-100': isRed,
-        'bg-slate-100': !isRed,
+        'bg-red-50 border-red-200 border-4': isRed,
+        'bg-white': !isRed,
         'h-44vw': !height,
         'flex-grow': height === 'flex-grow',
       },
@@ -27,7 +27,7 @@ defineProps<{
         v-text="title"
       ></h3>
     </transition>
-    <div class="flex flex-col text-basevw text-slate-600">
+    <div class="flex flex-col flex-grow text-basevw text-slate-600">
       <slot></slot>
     </div>
   </div>

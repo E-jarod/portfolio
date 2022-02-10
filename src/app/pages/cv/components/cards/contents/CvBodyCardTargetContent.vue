@@ -26,7 +26,9 @@ const trad = reactive({
 </script>
 
 <template>
-  <ul class="list-disc pl-12vw sm:pl-6vw text-xlvw">
+  <ul
+    class="flex flex-col justify-around h-full list-disc pl-12vw sm:pl-6vw text-xlvw"
+  >
     <transition name="slide" mode="out-in">
       <li :key="trad.becomeExpert">
         <span v-text="trad.becomeExpert"></span>
