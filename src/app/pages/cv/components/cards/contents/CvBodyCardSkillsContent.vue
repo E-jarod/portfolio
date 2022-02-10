@@ -1,20 +1,4 @@
-<script setup lang="ts">
-import { computed, inject, reactive } from 'vue';
-
-import { ProvidedIsEnglish } from '@pages/cv/cv.model';
-
-const isEnglish = inject('is-english') as ProvidedIsEnglish;
-
-const trad = reactive({
-  dev: computed(() => (isEnglish.value ? 'Development' : 'Développement')),
-  techUpdates: computed(() =>
-    isEnglish.value ? 'Tech updates' : 'Veille technologique',
-  ),
-  sports: 'Basketball',
-  system: computed(() => (isEnglish.value ? 'Systems' : 'Systèmes')),
-  sciences: 'Sciences',
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <ul class="flex flex-col flex-wrap list-none text-xlvw px-4vw">
