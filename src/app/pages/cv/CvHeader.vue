@@ -44,10 +44,10 @@ const copy = async () =>
             :key="jobTitle"
             class="block font-normal transition-all text-slate-900 text-4xlvw"
           >
-            <span v-if="!isEnglish" v-text="jobTitle"></span>
+            <span v-show="!isEnglish" v-text="jobTitle"></span>
             <em class="not-italic font-bold text-red-500">TypeScript</em> &
             <em class="not-italic font-bold text-sky-500">Flutter</em>
-            <span v-if="isEnglish" v-text="jobTitle"></span>
+            <span v-show="isEnglish" v-text="jobTitle"></span>
           </strong>
         </transition>
         <transition name="slide" mode="out-in">
@@ -74,6 +74,7 @@ const copy = async () =>
             v-text="phoneNumber"
           ></a>
         </transition>
+        <!-- TODO: age calculator -->
       </div>
     </div>
   </div>

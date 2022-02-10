@@ -15,7 +15,7 @@ const closeModal = (): void => {
 </script>
 
 <template>
-  <div v-if="openModal" class="z-20 md:hidden">
+  <div v-show="openModal" class="z-20 md:hidden">
     <div
       class="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80"
       id="headlessui-dialog-overlay-7"

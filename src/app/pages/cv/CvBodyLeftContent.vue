@@ -5,6 +5,7 @@ import CvBodyCard from './components/cards/CvBodyCard.vue';
 import CvBodyCardTargetContent from './components/cards/contents/CvBodyCardTargetContent.vue';
 import CvBodyCardLanguagesContent from './components/cards/contents/CvBodyCardLanguagesContent.vue';
 import CvBodyCardHobbiesContent from './components/cards/contents/CvBodyCardHobbiesContent.vue';
+import CvBodyCardSkillsContent from './components/cards/contents/CvBodyCardSkillsContent.vue';
 import { ProvidedIsEnglish } from './cv.model';
 
 const isEnglish = inject('is-english') as ProvidedIsEnglish;
@@ -23,7 +24,9 @@ const titles = reactive({
   <CvBodyCard :title="titles.target">
     <CvBodyCardTargetContent />
   </CvBodyCard>
-  <CvBodyCard is-red :title="titles.skills" height="flex-grow" />
+  <CvBodyCard is-red :title="titles.skills" height="flex-grow">
+    <CvBodyCardSkillsContent />
+  </CvBodyCard>
   <CvBodyCard :title="titles.languages">
     <CvBodyCardLanguagesContent />
   </CvBodyCard>

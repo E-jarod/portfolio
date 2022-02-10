@@ -13,10 +13,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 import {
+  faAndroid,
   faDiscord,
   faGithub,
   faGitlab,
   faLinkedin,
+  faNodeJs,
+  faReact,
+  faRust,
   faStackOverflow,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
@@ -43,6 +47,10 @@ library.add(
   faTwitter,
   faStackOverflow,
   faDiscord,
+  faReact,
+  faRust,
+  faNodeJs,
+  faAndroid,
 );
 
 export const FaIcon = FontAwesomeIcon;
