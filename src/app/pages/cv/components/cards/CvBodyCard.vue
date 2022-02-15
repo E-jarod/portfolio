@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps<{
   isRed?: boolean;
+  noBackground?: boolean;
   title: string;
   height?: string;
 }>();
@@ -12,8 +13,9 @@ defineProps<{
     :class="[
       height,
       {
-        'bg-red-50 border-red-200 border-4': isRed,
-        'bg-white': !isRed,
+        'bg-red-50 border-red-200 border-4': !noBackground && isRed,
+        'bg-white': !noBackground && !isRed,
+        'bg-transparent': noBackground,
         'h-44vw': !height,
         'flex-grow': height === 'flex-grow',
       },

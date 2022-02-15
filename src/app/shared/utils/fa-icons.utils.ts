@@ -3,11 +3,14 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faAtom,
   faBasketball,
+  faBriefcase,
+  faCalendarDays,
   faCode,
   faEllipsisV,
   faGlobeAmericas,
   faGlobeAsia,
   faGlobeEurope,
+  faLocationDot,
   faNewspaper,
   faTerminal,
 } from '@fortawesome/free-solid-svg-icons';
@@ -38,6 +41,9 @@ library.add(
   faTerminal,
   faBasketball,
   faNewspaper,
+  faBriefcase,
+  faLocationDot,
+  faCalendarDays,
 );
 // regular
 library.add(faMoon, faSun);
