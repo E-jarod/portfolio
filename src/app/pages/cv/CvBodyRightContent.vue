@@ -167,7 +167,7 @@ const titles = reactive({
     <section class="flex items-start justify-between">
       <img
         src="https://media-exp1.licdn.com/dms/image/C4D0BAQH94qXpEjr0AQ/company-logo_100_100/0/1632330797331?e=1652918400&v=beta&t=OouaKv3SwJ2zKdvsXB0xuqHbMECPKfYddj8ZFOGK9_M"
-        alt="PASS TECH"
+        alt="DevFamily"
         class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
       />
       <div class="flex flex-col flex-grow space-y-6vw">
@@ -234,34 +234,39 @@ const titles = reactive({
   >
     <section class="flex items-start justify-between">
       <img
-        src="https://media-exp1.licdn.com/dms/image/C4D0BAQH94qXpEjr0AQ/company-logo_100_100/0/1632330797331?e=1652918400&v=beta&t=OouaKv3SwJ2zKdvsXB0xuqHbMECPKfYddj8ZFOGK9_M"
-        alt="PASS TECH"
+        src="https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM"
+        alt="CFA INSTA"
         class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
       />
       <div class="flex flex-col flex-grow space-y-6vw">
         <div class="flex flex-col space-y-2vw">
           <div class="flex justify-between">
-            <span class="font-bold text-slate-900 text-xlvw"
-              >Développeur Full Stack JavaScript / Flutter</span
-            >
+            <span class="font-bold text-slate-900 text-xlvw">
+              Concepteur Développeur d'Applications
+              <small
+                class="font-bold text-smvw bg-sky-100 rounded-3xl px-3vw py-1vw"
+              >
+                En cours
+              </small>
+            </span>
             <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
-              >Temps libre personel</span
+              >RNCP VI</span
             >
           </div>
           <div
             class="flex justify-between font-bold space-x-6vw text-slate-400"
           >
             <span class="inline-flex items-center space-x-3vw">
-              <fa-icon :icon="['fas', 'briefcase']"></fa-icon>
-              <span v-text="'DevFamily'"></span>
+              <fa-icon :icon="['fas', 'graduation-cap']"></fa-icon>
+              <span v-text="'CFA INSTA'"></span>
             </span>
             <span class="inline-flex items-center space-x-3vw">
-              <fa-icon :icon="['fas', 'house-laptop']"></fa-icon>
-              <span v-text="'Remote'"></span>
+              <fa-icon :icon="['fas', 'location-dot']"></fa-icon>
+              <span v-text="'Paris'"></span>
             </span>
             <span class="flex-grow text-right space-x-3vw">
               <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
-              <span>2020 - ?</span>
+              <span>2021 - 2022</span>
             </span>
           </div>
         </div>
@@ -269,34 +274,36 @@ const titles = reactive({
     </section>
     <section class="flex items-start justify-between">
       <img
-        src="https://media-exp1.licdn.com/dms/image/C4D0BAQH94qXpEjr0AQ/company-logo_100_100/0/1632330797331?e=1652918400&v=beta&t=OouaKv3SwJ2zKdvsXB0xuqHbMECPKfYddj8ZFOGK9_M"
-        alt="PASS TECH"
+        src="https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM"
+        alt="CFA INSTA"
         class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
       />
       <div class="flex flex-col flex-grow space-y-6vw">
         <div class="flex flex-col space-y-2vw">
           <div class="flex justify-between">
             <span class="font-bold text-slate-900 text-xlvw"
-              >Développeur Full Stack JavaScript / Flutter</span
+              >BTS SIO
+              <small class="text-xlvw text-slate-400">|</small> option
+              Solutions Logicielles et Applications Métier</span
             >
-            <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
-              >Temps libre personel</span
-            >
+            <!-- <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
+              >RNCP VI</span
+            > -->
           </div>
           <div
             class="flex justify-between font-bold space-x-6vw text-slate-400"
           >
             <span class="inline-flex items-center space-x-3vw">
-              <fa-icon :icon="['fas', 'briefcase']"></fa-icon>
-              <span v-text="'DevFamily'"></span>
+              <fa-icon :icon="['fas', 'graduation-cap']"></fa-icon>
+              <span v-text="'CFA INSTA'"></span>
             </span>
             <span class="inline-flex items-center space-x-3vw">
-              <fa-icon :icon="['fas', 'house-laptop']"></fa-icon>
-              <span v-text="'Remote'"></span>
+              <fa-icon :icon="['fas', 'location-dot']"></fa-icon>
+              <span v-text="'Paris'"></span>
             </span>
             <span class="flex-grow text-right space-x-3vw">
               <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
-              <span>2020 - ?</span>
+              <span>2019 - 2021</span>
             </span>
           </div>
         </div>
@@ -304,49 +311,42 @@ const titles = reactive({
     </section>
     <section class="flex items-start justify-between">
       <img
-        src="https://media-exp1.licdn.com/dms/image/C4D0BAQH94qXpEjr0AQ/company-logo_100_100/0/1632330797331?e=1652918400&v=beta&t=OouaKv3SwJ2zKdvsXB0xuqHbMECPKfYddj8ZFOGK9_M"
-        alt="PASS TECH"
+        src="https://lycee-jeanrostand.fr/wp-content/uploads/2021/11/lyc%C3%A9e-j-rostand-logo3-miniature.png"
+        alt="Lycée Jean Rostand"
         class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
       />
       <div class="flex flex-col flex-grow space-y-6vw">
         <div class="flex flex-col space-y-2vw">
           <div class="flex justify-between">
             <span class="font-bold text-slate-900 text-xlvw"
-              >Développeur Full Stack JavaScript / Flutter</span
+              >Bac S
+              <small class="text-xlvw text-slate-400">|</small> option
+              Sciences de l'Ingénieur
+              <small class="text-xlvw text-slate-400">|</small> spécialité
+              Informatique et Sciences du Numérique</span
             >
-            <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
-              >Temps libre personel</span
-            >
+            <!-- <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
+              >RNCP VI</span
+            > -->
           </div>
           <div
             class="flex justify-between font-bold space-x-6vw text-slate-400"
           >
             <span class="inline-flex items-center space-x-3vw">
-              <fa-icon :icon="['fas', 'briefcase']"></fa-icon>
-              <span v-text="'DevFamily'"></span>
+              <fa-icon :icon="['fas', 'graduation-cap']"></fa-icon>
+              <span v-text="'Lycée Jean Rostand'"></span>
             </span>
             <span class="inline-flex items-center space-x-3vw">
-              <fa-icon :icon="['fas', 'house-laptop']"></fa-icon>
-              <span v-text="'Remote'"></span>
+              <fa-icon :icon="['fas', 'location-dot']"></fa-icon>
+              <span v-text="'Villepinte'"></span>
             </span>
             <span class="flex-grow text-right space-x-3vw">
               <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
-              <span>2020 - ?</span>
+              <span>2018 - 2019</span>
             </span>
           </div>
         </div>
       </div>
     </section>
-    <!-- <section>
-      2019-2021 | CFA INSTA, Paris 2e | (En cours) BTS SIO - Services
-      Informatiques aux Organisations | option SLAM - Solutions Logicielles
-      et Applications Métier<br /><br />
-    </section>
-
-    <section>
-      2018-2019 | Lycée Jean Rostand, Villepinte Bac S | option SI -
-      Sciences de l'Ingénieur | spécialité ISN - Informatique et Sciences
-      du Numérique | Mention : Bien
-    </section> -->
   </CvBodyCard>
 </template>

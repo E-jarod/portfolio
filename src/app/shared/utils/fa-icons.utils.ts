@@ -10,6 +10,7 @@ import {
   faGlobeAmericas,
   faGlobeAsia,
   faGlobeEurope,
+  faGraduationCap,
   faHouseLaptop,
   faLocationDot,
   faNewspaper,
@@ -46,6 +47,7 @@ library.add(
   faLocationDot,
   faHouseLaptop,
   faCalendarDays,
+  faGraduationCap,
 );
 // regular
 library.add(faMoon, faSun);
