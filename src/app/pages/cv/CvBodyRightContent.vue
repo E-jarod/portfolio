@@ -30,9 +30,14 @@ const titles = reactive({
       <div class="flex flex-col flex-grow space-y-6vw">
         <div class="flex flex-col space-y-2vw">
           <div class="flex justify-between">
-            <span class="font-bold text-slate-900 text-xlvw"
-              >Développeur Full Stack JS</span
-            >
+            <span class="font-bold text-slate-900 text-xlvw">
+              Développeur Full Stack JS
+              <small
+                class="font-bold text-smvw bg-sky-100 rounded-3xl px-3vw py-1vw"
+              >
+                En cours
+              </small>
+            </span>
             <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
               >Alternance</span
             >
@@ -56,7 +61,7 @@ const titles = reactive({
         </div>
         <div>
           <h6 class="font-bold text-red-600 uppercase">DOSIMA</h6>
-          <p class="italic text-slate-500 mb-5vw">
+          <p class="italic text-slate-500">
             App web de vérification du taux d'exposition nucléaire des
             employers de l'IRSN
           </p>
@@ -135,7 +140,7 @@ const titles = reactive({
           <h6 class="font-bold text-red-600 uppercase">
             Promat Cloisons Vitrés
           </h6>
-          <p class="italic mb-5vw text-slate-500">
+          <p class="italic text-slate-500">
             Application desktop qui concoit des cloisons vitrées pour la
             société Promat, utilisé par des commerciaux pour faire un devis
             afin de transmettre aux clients et constructeurs.
@@ -151,7 +156,7 @@ const titles = reactive({
           <h6 class="font-bold text-red-600 uppercase">
             Refonte du site web de Correlyce Atrium Sud
           </h6>
-          <p class="italic mb-5vw text-slate-500">
+          <p class="italic text-slate-500">
             App web et mobile offrant des ressources pédagogique aux
             établissements public de la région Sud
           </p>
