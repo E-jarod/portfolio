@@ -1,8 +1,11 @@
 <script setup lang="ts">
 defineProps<{
   isRed?: boolean;
+  noBackground?: boolean;
   title: string;
   height?: string;
+  additionalContentClasses?: string;
+  textSize?: string;
 }>();
 </script>
 
@@ -12,8 +15,9 @@ defineProps<{
     :class="[
       height,
       {
-        'bg-red-50 border-red-200 border-4': isRed,
-        'bg-white': !isRed,
+        'bg-red-50 border-red-200 border-4': !noBackground && isRed,
+        'bg-white': !noBackground && !isRed,
+        'bg-transparent': noBackground,
         'h-44vw': !height,
         'flex-grow': height === 'flex-grow',
       },
@@ -27,7 +31,14 @@ defineProps<{
         v-text="title"
       ></h3>
     </transition>
-    <div class="flex flex-col flex-grow text-basevw text-slate-600">
+    <div
+      class="flex flex-col flex-grow text-slate-600"
+      :class="[
+        additionalContentClasses,
+        textSize,
+        { 'text-basevw': !textSize },
+      ]"
+    >
       <slot></slot>
     </div>
   </div>
