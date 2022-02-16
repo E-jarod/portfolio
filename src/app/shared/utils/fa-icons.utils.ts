@@ -10,6 +10,7 @@ import {
   faGlobeAmericas,
   faGlobeAsia,
   faGlobeEurope,
+  faHouseLaptop,
   faLocationDot,
   faNewspaper,
   faTerminal,
@@ -43,6 +44,7 @@ library.add(
   faNewspaper,
   faBriefcase,
   faLocationDot,
+  faHouseLaptop,
   faCalendarDays,
 );
 // regular

@@ -4,6 +4,8 @@ defineProps<{
   noBackground?: boolean;
   title: string;
   height?: string;
+  additionalContentClasses?: string;
+  textSize?: string;
 }>();
 </script>
 
@@ -29,7 +31,14 @@ defineProps<{
         v-text="title"
       ></h3>
     </transition>
-    <div class="flex flex-col flex-grow text-basevw text-slate-600">
+    <div
+      class="flex flex-col flex-grow text-slate-600"
+      :class="[
+        additionalContentClasses,
+        textSize,
+        { 'text-basevw': !textSize },
+      ]"
+    >
       <slot></slot>
     </div>
   </div>
