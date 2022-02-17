@@ -95,12 +95,6 @@ const titles = reactive({
             <li>Configuration des linter, formatter et de TypeScript</li>
           </ul>
         </div>
-        <div>
-          <h6 class="font-bold text-red-600 uppercase">Intranet</h6>
-          <ul class="list-disc">
-            <li>Debug de l'intranet</li>
-          </ul>
-        </div>
       </div>
     </section>
     <section class="flex items-start justify-between">
