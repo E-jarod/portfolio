@@ -8,7 +8,8 @@ import CvHobbiesContent from '../contents/hobbies/CvHobbiesContent.vue';
 import CvSkillsContent from '../contents/skills/CvSkillsContent.vue';
 import { ProvidedIsEnglish } from '../cv.model';
 
-const isEnglish: ProvidedIsEnglish = inject('is-english');
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const isEnglish: ProvidedIsEnglish = inject('is-english')!;
 
 const titles = reactive({
   target: computed(() => (isEnglish.value ? 'Targets' : 'Objectifs')),

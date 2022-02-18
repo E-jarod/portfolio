@@ -1,107 +1,108 @@
-<!-- <script setup lang="ts"></script> -->
+<script setup lang="ts">
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import CvSkill, { type CvSkillProps } from './CvSkill.vue';
+
+const frameworkSkills: CvSkillProps[] = [
+  {
+    skillName: 'Flutter',
+    isConfirmedSkill: true,
+    bgColor: 'bg-sky-100',
+    isSvg: true,
+    svgIcon: {
+      id: 'icon-flutter',
+      color: 'fill-sky-500',
+      path: 'M19.085 0l-16.019 16 4.933 4.933 20.912-20.917h-9.809zM19.104 14.763l-8.628 8.609 8.627 8.627h9.831l-8.613-8.624 8.613-8.613z',
+    },
+    padding: 'p-2vw pr-3vw',
+  },
+  {
+    skillName: 'Vue',
+    isConfirmedSkill: true,
+    bgColor: 'bg-green-100',
+    isSvg: true,
+    svgIcon: {
+      id: 'icon-vue',
+      color: 'fill-green-500',
+      path: 'M32 2.147h-13.253l-2.747 4.733-2.747-4.733h-13.253l16 27.707zM16 18.773l-9.12-15.8h5.907l3.213 5.573 3.213-5.573h5.907z',
+    },
+    padding: 'p-2vw pt-3vw',
+  },
+  {
+    skillName: 'Angular',
+    isConfirmedSkill: true,
+    bgColor: 'bg-red-100',
+    isSvg: true,
+    svgIcon: {
+      id: 'icon-angular',
+      color: 'fill-red-500',
+      path: 'M13.24 16.86h5.512l-2.757-6.54zM15.995 0.012l-15.080 5.305 2.3 19.68 12.78 6.991 12.784-6.984 2.299-19.684zM25.405 24.408h-3.515l-1.893-4.668h-8.004l-1.893 4.668h-3.517l9.413-20.864z',
+    },
+  },
+  {
+    skillName: 'React',
+    bgColor: 'bg-blue-100',
+    faIcon: {
+      color: 'text-blue-500',
+      icon: ['fab', 'react'],
+    },
+  },
+  {
+    skillName: 'Nest.js',
+    isConfirmedSkill: true,
+    bgColor: 'bg-green-100',
+    faIcon: {
+      color: 'text-green-600',
+      icon: ['fab', 'node-js'],
+    },
+  },
+  {
+    separator: true,
+    skillName: 'Android',
+    bgColor: 'bg-green-100',
+    faIcon: {
+      color: 'text-green-500',
+      icon: ['fab', 'android'],
+    },
+  },
+];
+const languagesSkills: CvSkillProps[] = [];
+const toolsSkills: CvSkillProps[] = [];
+
+const skills: CvSkillProps[] = [
+  ...frameworkSkills,
+  ...languagesSkills,
+  ...toolsSkills,
+];
+</script>
 
 <template>
   <ul
     class="flex flex-col justify-between h-full list-none text-xlvw px-4vw"
   >
-    <li>
-      <div class="inline-flex items-center w-full space-x-10vw">
-        <div
-          class="inline-flex items-center justify-center rounded-full bg-sky-100 w-12vw h-12vw p-2vw pr-3vw"
-        >
-          <svg
-            class="inline-block stroke-current stroke-0 fill-sky-500 h-8vw w-8vw"
-          >
-            <symbol id="icon-flutter" viewBox="0 0 32 32">
-              <path
-                d="M19.085 0l-16.019 16 4.933 4.933 20.912-20.917h-9.809zM19.104 14.763l-8.628 8.609 8.627 8.627h9.831l-8.613-8.624 8.613-8.613z"
-              ></path>
-            </symbol>
-            <use xlink:href="#icon-flutter"></use>
-          </svg>
-        </div>
-        <span class="font-bold text-xlvw" v-text="'Flutter'"></span>
-      </div>
-    </li>
-    <li>
-      <div class="inline-flex items-center w-full space-x-10vw">
-        <div
-          class="inline-flex items-center justify-center bg-green-100 rounded-full w-12vw h-12vw p-2vw pt-3vw"
-        >
-          <svg
-            class="inline-block stroke-current stroke-0 fill-green-500 h-8vw w-8vw"
-          >
-            <symbol id="icon-vue-dot-js" viewBox="0 0 32 32">
-              <path
-                d="M32 2.147h-13.253l-2.747 4.733-2.747-4.733h-13.253l16 27.707zM16 18.773l-9.12-15.8h5.907l3.213 5.573 3.213-5.573h5.907z"
-              ></path>
-            </symbol>
-            <use xlink:href="#icon-vue-dot-js"></use>
-          </svg>
-        </div>
-        <span class="font-bold text-xlvw" v-text="'Vue'"></span>
-      </div>
-    </li>
-    <li>
-      <div class="inline-flex items-center w-full space-x-10vw">
-        <div
-          class="inline-flex items-center justify-center bg-red-100 rounded-full w-12vw h-12vw p-2vw"
-        >
-          <svg
-            class="inline-block stroke-current stroke-0 fill-red-500 h-8vw w-8vw"
-          >
-            <symbol id="icon-angular" viewBox="0 0 32 32">
-              <path
-                d="M13.24 16.86h5.512l-2.757-6.54zM15.995 0.012l-15.080 5.305 2.3 19.68 12.78 6.991 12.784-6.984 2.299-19.684zM25.405 24.408h-3.515l-1.893-4.668h-8.004l-1.893 4.668h-3.517l9.413-20.864z"
-              ></path>
-            </symbol>
-            <use xlink:href="#icon-angular"></use>
-          </svg>
-        </div>
-        <span class="font-bold text-xlvw" v-text="'Angular'"></span>
-      </div>
-    </li>
-    <li>
-      <div class="inline-flex items-center w-full space-x-10vw">
-        <div
-          class="inline-flex items-center justify-center bg-blue-100 rounded-full w-12vw h-12vw p-2vw"
-        >
-          <fa-icon
-            class="text-blue-500 w-8vw h-8vw"
-            :icon="['fab', 'react']"
-          ></fa-icon>
-        </div>
-        <span class="text-xlvw" v-text="'React'"></span>
-      </div>
-    </li>
-    <li>
-      <div class="inline-flex items-center w-full space-x-10vw">
-        <div
-          class="inline-flex items-center justify-center bg-green-100 rounded-full w-12vw h-12vw p-2vw"
-        >
-          <fa-icon
-            class="text-green-600 w-8vw h-8vw"
-            :icon="['fab', 'node-js']"
-          ></fa-icon>
-        </div>
-        <span class="font-bold text-xlvw" v-text="'Nest.js'"></span>
-      </div>
-    </li>
-    <li>
-      <div
-        class="inline-flex items-center w-full border-b-2 border-red-100 mb-2vw pb-2vw space-x-10vw"
-      >
-        <div
-          class="inline-flex items-center justify-center bg-green-100 rounded-full w-12vw h-12vw p-2vw"
-        >
-          <fa-icon
-            class="text-green-500 w-8vw h-8vw"
-            :icon="['fab', 'android']"
-          ></fa-icon>
-        </div>
-        <span class="text-xlvw" v-text="'Android'"></span>
-      </div>
-    </li>
+    <CvSkill
+      v-for="(skill, index) in skills"
+      :key="index"
+      :is-svg="skill.isSvg"
+      :separator="skill.separator"
+      :is-confirmed-skill="skill.isConfirmedSkill"
+      :skill-name="skill.skillName"
+      :padding="skill.padding"
+      :bg-color="skill.bgColor"
+      :fa-icon="skill.faIcon"
+      :svg-icon="skill.svgIcon"
+    />
+
+    <!-- <CvSkill
+      is-confirmed-skill
+      is-svg
+      skill-name="Flutter"
+      bg-color="bg-sky-100"
+      :svg-icon="{
+        id: 'icon-flutter',
+        color: 'fill-sky-500',
+        path: 'M19.085 0l-16.019 16 4.933 4.933 20.912-20.917h-9.809zM19.104 14.763l-8.628 8.609 8.627 8.627h9.831l-8.613-8.624 8.613-8.613z',
+      }"
+    /> -->
 
     <li>
       <div class="inline-flex items-center w-full space-x-10vw">

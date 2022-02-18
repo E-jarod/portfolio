@@ -6,7 +6,8 @@ import CvExperiencesContent from '../contents/experiences/CvExperiencesContent.v
 import CvBackgroundContent from '../contents/background/CvBackgroundContent.vue';
 import { ProvidedIsEnglish } from '../cv.model';
 
-const isEnglish: ProvidedIsEnglish = inject('is-english');
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const isEnglish: ProvidedIsEnglish = inject('is-english')!;
 
 const titles = reactive({
   experiences: computed(() =>
