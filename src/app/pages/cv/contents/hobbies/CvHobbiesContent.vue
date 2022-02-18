@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, inject, reactive } from 'vue';
 
-import { ProvidedIsEnglish } from '@pages/cv/cv.model';
+import { ProvidedIsEnglish } from '../../cv.model';
 
 const isEnglish = inject('is-english') as ProvidedIsEnglish;
 

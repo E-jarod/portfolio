@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { inject } from 'vue';
 
-import CvHeader from './components/header/CvHeader.vue';
-import CvBody from './components/body/CvBody.vue';
-import CvFooter from './components/footer/CvFooter.vue';
+import CvHeader from './header/CvHeader.vue';
+import CvBody from './body/CvBody.vue';
+import CvFooter from './footer/CvFooter.vue';
 import { ProvidedOpenCv } from './cv.model';
 
 const openCv = inject('open-cv') as ProvidedOpenCv;

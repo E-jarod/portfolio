@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed, inject, reactive } from 'vue';
 
-import CvBodyCard from '../cards/CvBodyCard.vue';
+import CvBodyCard from '../components/cards/CvBodyCard.vue';
 import CvExperiencesContent from '../contents/experiences/CvExperiencesContent.vue';
 import CvBackgroundContent from '../contents/background/CvBackgroundContent.vue';
-import { ProvidedIsEnglish } from '../../cv.model';
+import { ProvidedIsEnglish } from '../cv.model';
 
-const isEnglish = inject('is-english') as ProvidedIsEnglish;
+const isEnglish: ProvidedIsEnglish = inject('is-english');
 
 const titles = reactive({
   experiences: computed(() =>

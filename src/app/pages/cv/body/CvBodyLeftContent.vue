@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed, inject, reactive } from 'vue';
 
-import CvBodyCard from '../cards/CvBodyCard.vue';
+import CvBodyCard from '../components/cards/CvBodyCard.vue';
 import CvTargetsContent from '../contents/targets/CvTargetsContent.vue';
 import CvLanguagesContent from '../contents/languages/CvLanguagesContent.vue';
 import CvHobbiesContent from '../contents/hobbies/CvHobbiesContent.vue';
 import CvSkillsContent from '../contents/skills/CvSkillsContent.vue';
-import { ProvidedIsEnglish } from '../../cv.model';
+import { ProvidedIsEnglish } from '../cv.model';
 
-const isEnglish = inject('is-english') as ProvidedIsEnglish;
+const isEnglish: ProvidedIsEnglish = inject('is-english');
 
 const titles = reactive({
   target: computed(() => (isEnglish.value ? 'Targets' : 'Objectifs')),
