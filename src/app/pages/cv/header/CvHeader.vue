@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue';
 
-import { ProvidedIsEnglish } from './cv.model';
+import { ProvidedIsEnglish } from '../cv.model';
 import {
   getAvalaibleText,
   getRightMonth,

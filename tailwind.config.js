@@ -27,6 +27,7 @@ const vwFontSize = vwSpacingFunction(
 );
 // console.log(vwFontSize);
 
+/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],

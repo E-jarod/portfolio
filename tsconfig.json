@@ -14,7 +14,8 @@
     /* STRICT MODE CONFIGS END */
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": true,
+    // TODO: activate one day
+    "exactOptionalPropertyTypes": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
@@ -37,7 +38,8 @@
     // "noEmit": false,
     //
     /// JS SUPPORT ///
-    "allowJs": false,
+    // TODO: deactivate one day
+    "allowJs": true,
     //
     /// EDITOR SUPPORT ///
     "disableSizeLimit": false,
