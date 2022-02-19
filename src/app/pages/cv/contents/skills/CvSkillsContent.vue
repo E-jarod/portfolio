@@ -1,15 +1,6 @@
-<script lang="ts">
-import { defineComponent } from 'vue';
-
+<script setup lang="ts">
 import CvSkill from './CvSkill.vue';
 import { skills } from './cv-skils.utils';
-
-export default defineComponent({
-  components: { CvSkill },
-  setup() {
-    return { skills };
-  },
-});
 </script>
 
 <template>
