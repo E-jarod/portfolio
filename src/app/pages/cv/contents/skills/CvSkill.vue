@@ -18,6 +18,7 @@ export interface CvSkillProps {
     icon: IconProp;
   };
   svgIcon?: {
+    rounded?: boolean;
     color: TwFillColors;
     path: string;
     id: string;
@@ -40,7 +41,10 @@ defineProps<CvSkillProps>();
         <svg
           v-if="isSvg && svgIcon"
           class="inline-block stroke-current stroke-0 h-8vw w-8vw"
-          :class="[svgIcon.color]"
+          :class="[
+            svgIcon.color,
+            { 'rounded-sm md:rounded-md': svgIcon.rounded },
+          ]"
         >
           <symbol :id="svgIcon.id" viewBox="0 0 32 32">
             <path :d="svgIcon.path"></path>

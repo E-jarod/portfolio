@@ -1,24 +1,12 @@
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
-import type {
-  TwBgColors,
-  TwFillColors,
-  TwTextColors,
-} from '@shared/utils/tw-colors.utils';
+import type { CvSkillProps } from './cv-skill-props.model';
+import { frameworkSkills } from './framework-skills.data';
+import { languagesSkills } from './languages-skills.data';
+import { toolsSkills } from './tools-skills.utils';
 
-export interface CvSkillProps {
-  isSvg?: boolean;
-  separator?: boolean;
-  isConfirmedSkill?: boolean;
-  skillName: string;
-  padding?: string;
-  bgColor: TwBgColors;
-  faIcon?: {
-    color: TwTextColors;
-    icon: IconProp;
-  };
-  svgIcon?: {
-    color: TwFillColors;
-    path: string;
-    id: string;
-  };
-}
+export const skills: CvSkillProps[] = [
+  ...frameworkSkills,
+  ...languagesSkills,
+  ...toolsSkills,
+];
+
+export type { CvSkillProps };

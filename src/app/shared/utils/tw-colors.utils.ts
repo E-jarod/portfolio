@@ -20,6 +20,7 @@ type TwColorsName =
   | 'indigo'
   | 'violet'
   | 'purple'
+  | 'pink'
   | 'fuchsia'
   | 'rose';
 
