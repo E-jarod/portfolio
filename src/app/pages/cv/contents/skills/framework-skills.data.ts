@@ -12,6 +12,7 @@ export const frameworkSkills: CvSkillProps[] = [
       path: 'M19.085 0l-16.019 16 4.933 4.933 20.912-20.917h-9.809zM19.104 14.763l-8.628 8.609 8.627 8.627h9.831l-8.613-8.624 8.613-8.613z',
     },
     padding: 'p-2vw pr-3vw',
+    // padding: 'p-2vw pr-3vw',
   },
   {
     skillName: 'Vue',

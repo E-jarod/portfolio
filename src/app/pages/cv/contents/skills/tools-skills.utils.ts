@@ -20,7 +20,7 @@ export const toolsSkills: CvSkillProps[] = [
       color: 'fill-green-500',
       path: 'M0 0v32h9v-23h11.5v-9zM11.5 11.5v20.5h9v-20.5zM23 0v32h9v-32z',
     },
-    padding: 'p-3vw',
+    padding: 'p-3vw p-3vw',
   },
   {
     skillName: 'Arch Linux',

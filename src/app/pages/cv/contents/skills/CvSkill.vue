@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+
+import type {
+  TwPaddingsForCv,
+  RepeatString,
+} from '@shared/utils/tw-sizing.utils';
 import type {
   TwBgColors,
   TwFillColors,
@@ -11,7 +16,7 @@ export interface CvSkillProps {
   separator?: boolean;
   isConfirmedSkill?: boolean;
   skillName: string;
-  padding?: string;
+  padding?: RepeatString<TwPaddingsForCv, 2>;
   bgColor: TwBgColors;
   faIcon?: {
     color: TwTextColors;
