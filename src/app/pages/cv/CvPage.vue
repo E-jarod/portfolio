@@ -39,6 +39,8 @@ provide('is-english', readonly(isEnglish));
       @click="switchLanguage()"
     >
       <img
+        width="48"
+        height="48"
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
           'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':
@@ -48,6 +50,8 @@ provide('is-english', readonly(isEnglish));
         alt="EN"
       />
       <img
+        width="48"
+        height="48"
         class="w-12 h-12 transition-all ease-in-out rounded-full"
         :class="{
           'absolute -z-10 w-9 h-9 -top-1 -right-1 animate-pulse':

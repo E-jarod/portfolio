@@ -8,5 +8,6 @@ package = "@netlify/plugin-lighthouse"
 # pwa = 0.9
 # best-practices = 0.9
 # seo = 0.9
+#
 [plugins.inputs]
-output_path = "reports/lighthouse.html"
+output_path = "reports/check.html"

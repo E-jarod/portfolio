@@ -40,9 +40,11 @@ const copy = async () =>
     class="flex items-center justify-between space-x-10vw p-6vw bg-sky-100 rounded-3xl h-56vw print:rounded-t-none"
   >
     <img
+      width="175"
+      height="175"
       class="flex-shrink-0 rounded-3xl h-40vw w-40vw"
       src="https://media-exp1.licdn.com/dms/image/C4E03AQE3u0ruX9NXUw/profile-displayphoto-shrink_200_200/0/1645301988736?e=1650499200&v=beta&t=3D4BTQqIF_YwntpweX4Q43ccgxr8khcFv9yNDBy8YM8"
-      alt=""
+      alt="CV profile picture"
     />
     <div class="flex items-stretch justify-between flex-grow">
       <div class="flex flex-col flex-grow">

@@ -3,6 +3,8 @@
 <template>
   <section class="flex items-start justify-between">
     <img
+      width="70"
+      height="70"
       src="https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM"
       alt="CFA INSTA"
       class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
@@ -43,6 +45,8 @@
   </section>
   <section class="flex items-start justify-between">
     <img
+      width="70"
+      height="70"
       src="https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM"
       alt="CFA INSTA"
       class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
@@ -80,6 +84,8 @@
   </section>
   <section class="flex items-start justify-between">
     <img
+      width="70"
+      height="70"
       src="https://lycee-jeanrostand.fr/wp-content/uploads/2021/11/lyc%C3%A9e-j-rostand-logo3-miniature.png"
       alt="Lycée Jean Rostand"
       class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
