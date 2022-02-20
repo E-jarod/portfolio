@@ -3,14 +3,14 @@ import { provide, readonly, ref } from 'vue';
 
 import CvViewBox from './CvViewBox.vue';
 
-const openCv = ref(true);
+const openCv = ref(false);
 const isEnglish = ref(false);
 
 const print = (): void => window.print();
 
-// const toggleView = (): void => {
-//   openCv.value = !openCv.value;
-// };
+const toggleView = (): void => {
+  openCv.value = !openCv.value;
+};
 
 const switchLanguage = (): void => {
   isEnglish.value = !isEnglish.value;
@@ -26,8 +26,9 @@ provide('is-english', readonly(isEnglish));
   >
     <button
       type="button"
-      class="flex items-center justify-center w-40 h-12 px-0 font-semibold text-white rounded-2xl bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 sm:w-48 md:w-60 sm:px-6 dark:bg-red-500 dark:highlight-white/20 dark:hover:bg-red-400"
+      class="flex items-center justify-center w-40 h-12 px-0 font-semibold text-white rounded-2xl bg-slate-900 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 sm:w-48 md:w-60 sm:px-6 dark:bg-red-500 dark:highlight-white/20 disabled:dark:bg-opacity-60 disabled:cursor-not-allowed dark:hover:bg-red-400"
       @click="print()"
+      :disabled="!openCv"
     >
       Print CV
     </button>
@@ -57,13 +58,14 @@ provide('is-english', readonly(isEnglish));
       />
     </button>
     <!-- TODO: Toggle skeleton view (mobile) / normal view (desktop) -->
-    <!-- <button
+    <button
+      v-if="!openCv"
       type="button"
       class="flex items-center justify-center w-40 h-12 px-0 font-semibold bg-white shadow-sm rounded-2xl sm:px-6 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-red-500 text-slate-400 sm:w-44 md:w-52 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
       @click="toggleView()"
     >
-      Toggle view
-    </button> -->
+      Load CV
+    </button>
   </div>
 
   <CvViewBox />
