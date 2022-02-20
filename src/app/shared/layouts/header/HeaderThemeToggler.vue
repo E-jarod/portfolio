@@ -9,7 +9,7 @@ import { changeTheme } from '@utils/theme.utils';
     @click="changeTheme()"
     aria-haspopup="true"
     aria-expanded="false"
-    aria-labelledby="theme-toggler-label theme-toggler"
+    aria-labelledby="theme-toggler"
   >
     <label
       id="theme-toggler-label"
