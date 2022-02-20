@@ -11,20 +11,28 @@ const openCv = inject('open-cv') as ProvidedOpenCv;
 
 <template>
   <div
-    id="cv"
-    class="flex flex-col mx-auto shadow-2xl bg-slate-50 rounded-3xl shadow-slate-300 dark:shadow-slate-400"
-    :class="{ hidden: !openCv }"
+    v-if="openCv"
+    class="flex flex-col mx-auto shadow-2xl cv bg-slate-50 rounded-3xl shadow-slate-300 dark:shadow-slate-400"
   >
+    <!-- :class="{ hidden: !openCv }" -->
     <CvHeader />
     <CvBody />
     <CvFooter />
+  </div>
+  <div
+    v-else
+    class="flex flex-col items-center justify-center mx-auto border-8 border-dashed border-slate-50 cv rounded-3xl"
+  >
+    <span class="inline-block text-3xl font-extrabold text-slate-50"
+      >CV Here</span
+    >
   </div>
 </template>
 
 <style scoped>
 /* 1vw <=> 1.1 rem <=> 17.6 px */
 /* 10vw <=> 11 rem <=> 176 px */
-#cv {
+.cv {
   /* responsive A4 size */
   @apply my-[calc(100/23*1vw)] w-[calc(100/23*21vw)] h-[calc(100/23*29.7vw)];
   /* print styling */
