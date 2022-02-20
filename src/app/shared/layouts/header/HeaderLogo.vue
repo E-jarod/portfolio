@@ -16,9 +16,11 @@ onMounted(async () => {
   <figure class="flex items-center justify-between">
     <img
       id="profilePicture"
+      width="32"
+      height="32"
       class="w-8 h-8 rounded-full"
       :src="state.profileImage"
-      alt="img"
+      alt="profile picture"
     />
     <label class="m-3 text-lg">E-jarod</label>
   </figure>

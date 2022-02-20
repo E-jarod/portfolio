@@ -3,6 +3,8 @@
 <template>
   <section class="flex items-start justify-between">
     <img
+      width="70"
+      height="70"
       src="https://media-exp1.licdn.com/dms/image/C4D0BAQHY65mUGU6apw/company-logo_100_100/0/1575540140277?e=1652918400&v=beta&t=FMQ7yz1OjNOt7eU08vKN2m9Vt922Kwlbtla8OdLL8D8"
       alt="Ateliom"
       class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
@@ -79,6 +81,8 @@
   </section>
   <section class="flex items-start justify-between">
     <img
+      width="70"
+      height="70"
       src="https://media-exp1.licdn.com/dms/image/C4D0BAQH0QUe8XKf3dA/company-logo_100_100/0/1603971739251?e=1652918400&v=beta&t=k3q8PonRrV18bccJCpeA1gfPA8Gkp_Rfew6i3iTSrfE"
       alt="PASS TECH"
       class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
@@ -145,6 +149,8 @@
   </section>
   <section class="flex items-start justify-between">
     <img
+      width="70"
+      height="70"
       src="https://media-exp1.licdn.com/dms/image/C4D0BAQH94qXpEjr0AQ/company-logo_100_100/0/1632330797331?e=1652918400&v=beta&t=OouaKv3SwJ2zKdvsXB0xuqHbMECPKfYddj8ZFOGK9_M"
       alt="DevFamily"
       class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
