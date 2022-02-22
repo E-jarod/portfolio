@@ -15,6 +15,7 @@ import {
   faLocationDot,
   faNewspaper,
   faTerminal,
+  faUsers,
 } from '@fortawesome/free-solid-svg-icons';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -48,6 +49,7 @@ library.add(
   faHouseLaptop,
   faCalendarDays,
   faGraduationCap,
+  faUsers,
 );
 // regular
 library.add(faMoon, faSun);
