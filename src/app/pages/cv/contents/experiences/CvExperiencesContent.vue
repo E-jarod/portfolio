@@ -1,15 +1,46 @@
 <script setup lang="ts">
-import CvTimespan from './CvTimespan.vue';
+import { inject, computed, type ComputedRef } from 'vue';
+
+import CvTimespan, { type CvTimespanProps } from './CvTimespan.vue';
+import { ProvidedIsEnglish } from '../../cv.model';
+
+const isEnglish = inject('is-english') as ProvidedIsEnglish;
+
+type Reffify<Type> = {
+  [Property in keyof Type]: ComputedRef<Type[Property]>;
+};
+
+const timespans: Reffify<CvTimespanProps>[] = [
+  {
+    imgSrc: computed(
+      () =>
+        'https://media-exp1.licdn.com/dms/image/C4D0BAQHY65mUGU6apw/company-logo_100_100/0/1575540140277?e=1652918400&v=beta&t=FMQ7yz1OjNOt7eU08vKN2m9Vt922Kwlbtla8OdLL8D8',
+    ),
+    imgAlt: computed(() => 'Ateliom logo'),
+    title: computed(() =>
+      isEnglish.value
+        ? ('Full Stack JS Developer' as string)
+        : ('Développeur Full Stack JS' as string),
+    ),
+    structureName: computed(() => 'Ateliom'),
+    locationName: computed(() => 'Paris'),
+    locationIcon: computed(() => ['fas', 'briefcase']),
+    structureIcon: computed(() => ['fas', 'location-dot']),
+    startDate: computed(() => new Date(2021, 8, 6)),
+  },
+];
 </script>
 
 <template>
   <CvTimespan
-    img-src="https://media-exp1.licdn.com/dms/image/C4D0BAQHY65mUGU6apw/company-logo_100_100/0/1575540140277?e=1652918400&v=beta&t=FMQ7yz1OjNOt7eU08vKN2m9Vt922Kwlbtla8OdLL8D8"
-    img-alt="Ateliom logo"
-    title="Développeur Full Stack JS"
+    v-for="(timespan, index) in timespans"
+    :key="index"
+    :img-src="timespan.imgSrc.value"
+    :img-alt="timespan.imgAlt.value"
+    :title="timespan.title.value"
     structure-name="Ateliom"
     location-name="Paris"
-    badge-text="Alternance"
+    :badge-text="timespan.badgeText?.value"
     :structure-icon="['fas', 'briefcase']"
     :location-icon="['fas', 'location-dot']"
     :start-date="new Date(2021, 8, 6)"

@@ -4,7 +4,7 @@ import { computed, inject } from 'vue';
 
 import { ProvidedIsEnglish } from '../../cv.model';
 
-interface CvTimespanProps {
+export interface CvTimespanProps {
   imgSrc: string;
   imgAlt: string;
   title: string;
@@ -36,6 +36,10 @@ const endDate = computed(() =>
         .toLowerCase()} ${props.endDate.getFullYear()}`
     : '?',
 );
+
+const ongoingBadgeText = computed(() =>
+  isEnglish.value ? 'Ongoing' : 'En cours',
+);
 </script>
 
 <template>
@@ -50,19 +54,28 @@ const endDate = computed(() =>
     <div class="flex flex-col flex-grow space-y-6vw">
       <div class="flex flex-col space-y-2vw">
         <div class="flex justify-between">
-          <span class="font-bold text-slate-900 text-xlvw">
-            {{ title }}
-            <small
-              v-if="endDate === '?'"
-              class="font-bold text-smvw bg-sky-100 rounded-3xl px-3vw py-1vw"
-              v-text="'En cours'"
-            ></small>
-          </span>
-          <span
-            v-if="badgeText"
-            class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
-            v-text="badgeText"
-          ></span>
+          <transition name="slide" mode="out-in">
+            <span
+              :key="title"
+              class="font-bold space-x-1vw text-slate-900 text-xlvw"
+            >
+              <span>{{ title }}</span>
+              <small
+                v-if="endDate === '?'"
+                :key="ongoingBadgeText"
+                class="font-bold text-smvw bg-sky-100 rounded-3xl px-3vw py-1vw"
+                v-text="ongoingBadgeText"
+              ></small>
+            </span>
+          </transition>
+          <transition name="slide" mode="out-in">
+            <span
+              :key="badgeText"
+              v-if="badgeText"
+              class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
+              v-text="badgeText"
+            ></span>
+          </transition>
         </div>
         <div
           class="flex justify-between font-bold space-x-6vw text-slate-400"
@@ -73,12 +86,19 @@ const endDate = computed(() =>
           </span>
           <span class="inline-flex items-center space-x-3vw">
             <fa-icon :icon="locationIcon"></fa-icon>
-            <span v-text="locationName"></span>
+            <transition name="slide" mode="out-in">
+              <span :key="locationName" v-text="locationName"></span>
+            </transition>
           </span>
-          <span class="flex-grow text-right space-x-3vw">
-            <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
-            <span>{{ startDate }} - {{ endDate }}</span>
-          </span>
+          <transition name="slide" mode="out-in">
+            <span
+              :key="startDate"
+              class="flex-grow text-right space-x-3vw"
+            >
+              <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
+              <span>{{ startDate }} - {{ endDate }}</span>
+            </span>
+          </transition>
         </div>
       </div>
       <slot></slot>

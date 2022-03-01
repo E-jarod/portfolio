@@ -6,4 +6,6 @@ import App from './app/App.vue';
 import { router } from './router';
 import './index.css';
 
+console.clear();
+
 createApp(App).component('fa-icon', FaIcon).use(router).mount('#app');
