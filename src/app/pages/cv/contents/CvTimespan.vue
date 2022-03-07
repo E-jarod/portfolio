@@ -2,7 +2,7 @@
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { computed, inject } from 'vue';
 
-import { ProvidedIsEnglish } from '../../cv.model';
+import { ProvidedIsEnglish } from '../cv.model';
 
 export interface CvTimespanProps {
   imgSrc: string;

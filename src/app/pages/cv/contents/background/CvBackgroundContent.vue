@@ -1,125 +1,85 @@
-<!-- <script lang="ts"></script> -->
+<script setup lang="ts">
+import { inject, computed, reactive } from 'vue';
+import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+
+import type { ProvidedIsEnglish } from '../../cv.model';
+import type { TimespanInfo } from '../cv-timespan.utils';
+import CvTimespan from '../CvTimespan.vue';
+
+const isEnglish = inject('is-english') as ProvidedIsEnglish;
+
+const timespans: TimespanInfo[] = [
+  reactive({
+    imgSrc:
+      'https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM',
+    imgAlt: 'CFA INSTA logo',
+    title: computed(() =>
+      isEnglish.value
+        ? 'Application Designer Developer'
+        : "Concepteur Développeur d'Applications",
+    ),
+    structureName: 'CFA INSTA',
+    locationName: 'Paris',
+    structureIcon: ['fas', 'graduation-cap'] as IconProp,
+    locationIcon: ['fas', 'location-dot'] as IconProp,
+    badgeText: 'RNCP VI',
+    startDate: new Date(2021, 8, 20),
+  }),
+  reactive({
+    imgSrc:
+      'https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM',
+    imgAlt: 'CFA INSTA logo',
+    title: computed(() =>
+      isEnglish.value
+        ? 'BTS SIO | Software Solutions and Business Applications option'
+        : 'BTS SIO | option Solutions Logicielles et Applications Métier',
+    ),
+    structureName: 'CFA INSTA',
+    locationName: 'Paris',
+    structureIcon: ['fas', 'graduation-cap'] as IconProp,
+    locationIcon: ['fas', 'location-dot'] as IconProp,
+    startDate: new Date(2019, 8, 10),
+    endDate: new Date(2021, 6, 15),
+  }),
+  reactive({
+    imgSrc:
+      'https://lycee-jeanrostand.fr/wp-content/uploads/2021/11/lyc%C3%A9e-j-rostand-logo3-miniature.png',
+    imgAlt: 'Lycée Jean Rostand logo',
+    title: computed(() =>
+      isEnglish.value
+        ? 'Bac S | Engineering Sciences option | IT and Digital Sciences specialty'
+        : "Bac S | option Sciences de l'Ingénieur | spécialité Informatique et Sciences du Numérique",
+    ),
+    structureName: 'Lycée Jean Rostand',
+    locationName: 'Villepinte',
+    structureIcon: ['fas', 'graduation-cap'] as IconProp,
+    locationIcon: ['fas', 'location-dot'] as IconProp,
+    startDate: new Date(2018, 8, 3),
+    endDate: new Date(2019, 6, 5),
+  }),
+];
+</script>
 
 <template>
-  <section class="flex items-start justify-between">
-    <img
-      width="70"
-      height="70"
-      src="https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM"
-      alt="CFA INSTA"
-      class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
-    />
-    <div class="flex flex-col flex-grow space-y-6vw">
-      <div class="flex flex-col space-y-2vw">
-        <div class="flex justify-between">
-          <span class="font-bold text-slate-900 text-xlvw">
-            Concepteur Développeur d'Applications
-            <small
-              class="font-bold text-smvw bg-sky-100 rounded-3xl px-3vw py-1vw"
-            >
-              En cours
-            </small>
-          </span>
-          <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
-            >RNCP VI</span
-          >
-        </div>
-        <div
-          class="flex justify-between font-bold space-x-6vw text-slate-400"
-        >
-          <span class="inline-flex items-center space-x-3vw">
-            <fa-icon :icon="['fas', 'graduation-cap']"></fa-icon>
-            <span v-text="'CFA INSTA'"></span>
-          </span>
-          <span class="inline-flex items-center space-x-3vw">
-            <fa-icon :icon="['fas', 'location-dot']"></fa-icon>
-            <span v-text="'Paris'"></span>
-          </span>
-          <span class="flex-grow text-right space-x-3vw">
-            <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
-            <span>2021 - 2022</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="flex items-start justify-between">
-    <img
-      width="70"
-      height="70"
-      src="https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM"
-      alt="CFA INSTA"
-      class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
-    />
-    <div class="flex flex-col flex-grow space-y-6vw">
-      <div class="flex flex-col space-y-2vw">
-        <div class="flex justify-between">
-          <span class="font-bold text-slate-900 text-xlvw"
-            >BTS SIO
+  <CvTimespan
+    v-for="(timespan, index) in timespans"
+    :key="index"
+    :img-src="timespan.imgSrc"
+    :img-alt="timespan.imgAlt"
+    :title="timespan.title"
+    :structure-name="timespan.structureName"
+    :location-name="timespan.locationName"
+    :badge-text="timespan.badgeText"
+    :structure-icon="timespan.structureIcon"
+    :location-icon="timespan.locationIcon"
+    :start-date="timespan.startDate"
+    :end-date="timespan.endDate"
+  />
+  <!--BTS SIO
             <small class="text-xlvw text-slate-400">|</small> option
-            Solutions Logicielles et Applications Métier</span
-          >
-          <!-- <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
-              >RNCP VI</span
-            > -->
-        </div>
-        <div
-          class="flex justify-between font-bold space-x-6vw text-slate-400"
-        >
-          <span class="inline-flex items-center space-x-3vw">
-            <fa-icon :icon="['fas', 'graduation-cap']"></fa-icon>
-            <span v-text="'CFA INSTA'"></span>
-          </span>
-          <span class="inline-flex items-center space-x-3vw">
-            <fa-icon :icon="['fas', 'location-dot']"></fa-icon>
-            <span v-text="'Paris'"></span>
-          </span>
-          <span class="flex-grow text-right space-x-3vw">
-            <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
-            <span>2019 - 2021</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="flex items-start justify-between">
-    <img
-      width="70"
-      height="70"
-      src="https://lycee-jeanrostand.fr/wp-content/uploads/2021/11/lyc%C3%A9e-j-rostand-logo3-miniature.png"
-      alt="Lycée Jean Rostand"
-      class="flex-shrink-0 object-cover border-2 rounded-lg shadow-md ml-5vw mx-6vw border-slate-100 w-16vw h-16vw"
-    />
-    <div class="flex flex-col flex-grow space-y-6vw">
-      <div class="flex flex-col space-y-2vw">
-        <div class="flex justify-between">
-          <span class="font-bold text-slate-900 text-xlvw"
-            >Bac S <small class="text-xlvw text-slate-400">|</small> option
+            Solutions Logicielles et Applications Métier-->
+  <!--Bac S <small class="text-xlvw text-slate-400">|</small> option
             Sciences de l'Ingénieur
             <small class="text-xlvw text-slate-400">|</small> spécialité
-            Informatique et Sciences du Numérique</span
-          >
-          <!-- <span class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
-              >RNCP VI</span
-            > -->
-        </div>
-        <div
-          class="flex justify-between font-bold space-x-6vw text-slate-400"
-        >
-          <span class="inline-flex items-center space-x-3vw">
-            <fa-icon :icon="['fas', 'graduation-cap']"></fa-icon>
-            <span v-text="'Lycée Jean Rostand'"></span>
-          </span>
-          <span class="inline-flex items-center space-x-3vw">
-            <fa-icon :icon="['fas', 'location-dot']"></fa-icon>
-            <span v-text="'Villepinte'"></span>
-          </span>
-          <span class="flex-grow text-right space-x-3vw">
-            <fa-icon :icon="['fas', 'calendar-days']"></fa-icon>
-            <span>2018 - 2019</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
+            Informatique et Sciences du Numérique -->
 </template>
