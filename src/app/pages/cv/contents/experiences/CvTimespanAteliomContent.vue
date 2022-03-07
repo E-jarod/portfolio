@@ -32,6 +32,12 @@ const trad = reactive({
       ? 'Configuring linters, formatters and TypeScript'
       : 'Configuration des linteur, formatteur et TypeScript',
   ),
+  // Boilerplate
+  boilerplateTitle: computed(() =>
+    isEnglish.value
+      ? 'Quasar.js & Nest.js Boilerplate'
+      : 'Boilerplate Quasar.js & Nest.js',
+  ),
 });
 </script>
 
@@ -55,9 +61,13 @@ const trad = reactive({
     </Transition>
   </div>
   <div>
-    <h6 class="font-bold text-red-600 uppercase">
-      Boilerplate Quasar.js & Nest.js
-    </h6>
+    <Transition name="slide" mode="out-in">
+      <h6
+        :key="trad.boilerplateTitle"
+        class="font-bold text-red-600 uppercase"
+        v-text="trad.boilerplateTitle"
+      ></h6>
+    </Transition>
     <Transition name="slide" mode="out-in">
       <ul :key="trad.dosimaListScaffold" class="list-disc pl-5vw">
         <li v-text="trad.dosimaListScaffold"></li>
