@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { computed, inject } from 'vue';
+import { computed, h, inject } from 'vue';
 
 import { ProvidedIsEnglish } from '../cv.model';
 
@@ -40,6 +40,19 @@ const endDate = computed(() =>
 const ongoingBadgeText = computed(() =>
   isEnglish.value ? 'Ongoing' : 'En cours',
 );
+
+const renderTitleWithSeparatorsIfNeeded = () => {
+  const separator = h('small', { class: 'text-xlvw text-slate-400' }, '|');
+  const titleWithSeparators = props.title.split('|');
+
+  const title = [];
+  for (const [index, text] of titleWithSeparators.entries()) {
+    if (index > 0) title.push(separator);
+    title.push(text);
+  }
+
+  return h('span', title);
+};
 </script>
 
 <template>
@@ -54,12 +67,13 @@ const ongoingBadgeText = computed(() =>
     <div class="flex flex-col flex-grow space-y-6vw">
       <div class="flex flex-col space-y-2vw">
         <div class="flex justify-between">
-          <transition name="slide" mode="out-in">
+          <Transition name="slide" mode="out-in">
             <span
               :key="title"
               class="font-bold space-x-1vw text-slate-900 text-xlvw"
             >
-              <span>{{ title }}</span>
+              <!-- h() function usage -->
+              <renderTitleWithSeparatorsIfNeeded />
               <small
                 v-if="endDate === '?'"
                 :key="ongoingBadgeText"
@@ -67,15 +81,15 @@ const ongoingBadgeText = computed(() =>
                 v-text="ongoingBadgeText"
               ></small>
             </span>
-          </transition>
-          <transition name="slide" mode="out-in">
+          </Transition>
+          <Transition name="slide" mode="out-in">
             <span
-              :key="badgeText"
               v-if="badgeText"
+              :key="badgeText"
               class="font-bold bg-red-100 rounded-3xl px-3vw py-1vw"
               v-text="badgeText"
             ></span>
-          </transition>
+          </Transition>
         </div>
         <div
           class="flex justify-between font-bold space-x-6vw text-slate-400"

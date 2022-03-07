@@ -75,11 +75,4 @@ const timespans: TimespanInfo[] = [
     :start-date="timespan.startDate"
     :end-date="timespan.endDate"
   />
-  <!--BTS SIO
-            <small class="text-xlvw text-slate-400">|</small> option
-            Solutions Logicielles et Applications Métier-->
-  <!--Bac S <small class="text-xlvw text-slate-400">|</small> option
-            Sciences de l'Ingénieur
-            <small class="text-xlvw text-slate-400">|</small> spécialité
-            Informatique et Sciences du Numérique -->
 </template>
