@@ -45,8 +45,8 @@ const trad = reactive({
   ),
   correlyceGivenDesign: computed(() =>
     isEnglish.value
-      ? '-'
-      : 'Respect de la charte graphique donné par les client',
+      ? 'Compliance with the graphic charter given by the customer'
+      : 'Respect de la charte graphique donné par le client',
   ),
   correlyceNgRx: computed(() =>
     isEnglish.value
@@ -54,7 +54,9 @@ const trad = reactive({
       : 'Gestion du state global via NgRx',
   ),
   correlyceNewIdeas: computed(() =>
-    isEnglish.value ? '-' : 'Proposition de nouvelles idées de design',
+    isEnglish.value
+      ? 'Proposal of new design ideas'
+      : 'Proposition de nouvelles idées de design',
   ),
   correlyceRefactor: computed(() =>
     isEnglish.value
