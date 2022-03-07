@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from '@components/HelloWorld.vue';
+import NotReadyYetVue from '@components/NotReadyYet.vue';
 </script>
 
 <template>
-  <HelloWorld msg="Contact" />
+  <NotReadyYetVue />
 </template>
