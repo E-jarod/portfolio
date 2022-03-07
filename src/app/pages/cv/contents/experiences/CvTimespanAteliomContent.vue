@@ -29,7 +29,7 @@ const trad = reactive({
   ),
   dosimaListConfig: computed(() =>
     isEnglish.value
-      ? 'Configuring linters, formatters and TypeScript'
+      ? 'Configuring linter, formatter and TypeScript'
       : 'Configuration des linteur, formatteur et TypeScript',
   ),
   // Boilerplate

@@ -6,7 +6,9 @@ import type { ProvidedIsEnglish } from '../../cv.model';
 const isEnglish = inject('is-english') as ProvidedIsEnglish;
 
 const trad = reactive({
-  // Promat
+  titlePart: computed(() =>
+    isEnglish.value ? 'showcase site' : 'site vitrine',
+  ),
   todoAssoPresentation: computed(() =>
     isEnglish.value
       ? 'Web application that manages different types of associations'
@@ -43,7 +45,10 @@ const trad = reactive({
 <template>
   <div>
     <h6 class="font-bold text-red-600 uppercase">
-      Todo Asso (app & site vitrine)
+      Todo Asso ( app &
+      <Transition name="slide" mode="out-in">
+        <span :key="trad.titlePart" v-text="trad.titlePart + ' )'"></span>
+      </Transition>
     </h6>
     <Transition name="slide" mode="out-in">
       <p
@@ -53,7 +58,7 @@ const trad = reactive({
       ></p>
     </Transition>
     <Transition name="slide" mode="out-in">
-      <ul :key="trad.todoAssoListFromScratch" class="list-disc">
+      <ul :key="trad.todoAssoListFromScratch" class="list-disc pl-5vw">
         <li v-text="trad.todoAssoListFromScratch"></li>
         <li v-text="trad.todoAssoListScaffold"></li>
         <li v-text="trad.todoAssoSomePages"></li>
@@ -62,7 +67,10 @@ const trad = reactive({
   </div>
   <div>
     <h6 class="font-bold text-red-600 uppercase">
-      DevFamily (app & site vitrine)
+      DevFamily ( app &
+      <Transition name="slide" mode="out-in">
+        <span :key="trad.titlePart" v-text="trad.titlePart + ' )'"></span>
+      </Transition>
     </h6>
     <Transition name="slide" mode="out-in">
       <p
@@ -72,7 +80,7 @@ const trad = reactive({
       ></p>
     </Transition>
     <Transition name="slide" mode="out-in">
-      <ul :key="trad.devFamilyListScaffold" class="list-disc">
+      <ul :key="trad.devFamilyListScaffold" class="list-disc pl-5vw">
         <li v-text="trad.todoAssoListFromScratch"></li>
         <li v-text="trad.devFamilyListScaffold"></li>
       </ul>

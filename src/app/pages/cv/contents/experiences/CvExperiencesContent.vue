@@ -3,9 +3,9 @@ import { inject, computed, reactive } from 'vue';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 import type { ProvidedIsEnglish } from '../../cv.model';
-import type { TimespanInfo } from './cv-experiences-contents.utils';
+import type { TimespanInfo } from '../cv-timespan.utils';
 import { timespanContents } from './cv-experiences-contents.utils';
-import CvTimespan from './CvTimespan.vue';
+import CvTimespan from '../CvTimespan.vue';
 
 const isEnglish = inject('is-english') as ProvidedIsEnglish;
 
