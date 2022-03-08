@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import NotReadyYetVue from '@components/NotReadyYet.vue';
+import WorkInProgress from '@app/shared/components/WorkInProgress.vue';
 </script>
 
 <template>
-  <NotReadyYetVue />
+  <WorkInProgress />
 </template>
