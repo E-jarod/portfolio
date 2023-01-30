@@ -10,8 +10,7 @@ const isEnglish = inject('is-english') as ProvidedIsEnglish;
 
 const timespans: TimespanInfo[] = [
   reactive({
-    imgSrc:
-      'https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM',
+    imgSrc: '/cfa_insta_logo.jpeg',
     imgAlt: 'CFA INSTA logo',
     title: computed(() =>
       isEnglish.value
@@ -26,8 +25,7 @@ const timespans: TimespanInfo[] = [
     startDate: new Date(2021, 8, 20),
   }),
   reactive({
-    imgSrc:
-      'https://media-exp1.licdn.com/dms/image/C4D0BAQHIpIhUq6mVyw/company-logo_100_100/0/1519898530333?e=1652918400&v=beta&t=WSjt9efKWxPzjZKYlgBiIT85NL46XUSP_5eisTu3bZM',
+    imgSrc: '/cfa_insta_logo.jpeg',
     imgAlt: 'CFA INSTA logo',
     title: computed(() =>
       isEnglish.value
@@ -42,8 +40,7 @@ const timespans: TimespanInfo[] = [
     endDate: new Date(2021, 6, 15),
   }),
   reactive({
-    imgSrc:
-      'https://lycee-jeanrostand.fr/wp-content/uploads/2021/11/lyc%C3%A9e-j-rostand-logo3-miniature.png',
+    imgSrc: '/lycee_jean_rostand_logo.jpg',
     imgAlt: 'Lycée Jean Rostand logo',
     title: computed(() =>
       isEnglish.value

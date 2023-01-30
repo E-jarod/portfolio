@@ -9,28 +9,31 @@ const trad = reactive({
   // DOSIMA
   dosimaPresentation: computed(() =>
     isEnglish.value
-      ? 'Web app for verifying the nuclear exposure rate of IRSN employees'
-      : "App web de vérification du taux d'exposition nucléaire des employers de l'IRSN",
+      ? 'Web app for verifying the nuclear exposure rate'
+      : "App web de vérification du taux d'exposition nucléaire",
   ),
-  dosimaListScaffold: computed(() =>
+  dosimaList: computed(() =>
     isEnglish.value
-      ? 'Scaffold front-end, back-end and database'
-      : 'Scaffold front-end, back-end et base de données',
-  ),
-  dosimaListAutonomy: computed(() =>
-    isEnglish.value
-      ? '2-3 months of development alone on the fullstack web part, then teamwork of around 6-7 developers'
-      : "2-3 mois de développement seul sur la partie fullstack web, puis travail en équipe d'environ 6-7 développeurs",
-  ),
-  dosimaListProgress: computed(() =>
-    isEnglish.value
-      ? 'Setting up all the tables, endpoints and services in the back-end + admin pages and a few pages in the front-end'
-      : 'Mise en place de toutes les tables, endpoints et services dans le back + pages admins et quelques pages dans le front',
-  ),
-  dosimaListConfig: computed(() =>
-    isEnglish.value
-      ? 'Configuring linter, formatter and TypeScript'
-      : 'Configuration des linteur, formatteur et TypeScript',
+      ? [
+          'front-end scaffold',
+          'backend scaffold',
+          'database scaffold',
+          'autonomus web dev (2-3 months)',
+          'teamwork web dev (7-8 months)',
+          'configuration files',
+          'project architecture',
+          'administration pages',
+        ]
+      : [
+          'scaffold front-end',
+          'scaffold back-end',
+          'scaffold base de données',
+          'dev web autonome (2-3 mois)',
+          'dev web en team (7-8 mois)',
+          'fichiers de config',
+          'architecture de projet',
+          "pages d'administration",
+        ],
   ),
   // Boilerplate
   boilerplateTitle: computed(() =>
@@ -38,42 +41,53 @@ const trad = reactive({
       ? 'Quasar.js & Nest.js Boilerplate'
       : 'Boilerplate Quasar.js & Nest.js',
   ),
+  boilerplatePresentation: computed(() =>
+    isEnglish.value
+      ? 'Front-end & back-end boilerplates'
+      : 'Boilerplate front-end & back-end',
+  ),
 });
 </script>
 
 <template>
-  <div>
-    <h6 class="font-bold text-red-600 uppercase">DOSIMA</h6>
+  <div class="flex flex-col items-start justify-between space-y-2">
+    <div class="flex items-center justify-between w-full">
+      <h6 class="font-bold text-red-600 uppercase">DOSIMA</h6>
+      <Transition name="slide" mode="out-in">
+        <p
+          :key="trad.dosimaPresentation"
+          class="italic font-semibold text-slate-500"
+          v-text="trad.dosimaPresentation"
+        ></p>
+      </Transition>
+    </div>
     <Transition name="slide" mode="out-in">
-      <p
-        :key="trad.dosimaPresentation"
-        class="italic text-slate-500"
-        v-text="trad.dosimaPresentation"
-      ></p>
-    </Transition>
-    <Transition name="slide" mode="out-in">
-      <ul :key="trad.dosimaListScaffold" class="list-disc pl-5vw">
-        <li v-text="trad.dosimaListScaffold"></li>
-        <li v-text="trad.dosimaListAutonomy"></li>
-        <li v-text="trad.dosimaListProgress"></li>
-        <li v-text="trad.dosimaListConfig"></li>
+      <ul :key="trad.dosimaList[0]" class="flex flex-wrap gap-2">
+        <li
+          v-for="(item, index) in trad.dosimaList"
+          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
+          :key="index"
+          v-text="item"
+        ></li>
       </ul>
     </Transition>
   </div>
-  <div>
-    <Transition name="slide" mode="out-in">
-      <h6
-        :key="trad.boilerplateTitle"
-        class="font-bold text-red-600 uppercase"
-        v-text="trad.boilerplateTitle"
-      ></h6>
-    </Transition>
-    <Transition name="slide" mode="out-in">
-      <ul :key="trad.dosimaListScaffold" class="list-disc pl-5vw">
-        <li v-text="trad.dosimaListScaffold"></li>
-        <li v-text="trad.dosimaListProgress"></li>
-        <li v-text="trad.dosimaListConfig"></li>
-      </ul>
-    </Transition>
+  <div class="flex flex-col items-start justify-between">
+    <div class="flex items-center justify-between w-full">
+      <Transition name="slide" mode="out-in">
+        <h6
+          :key="trad.boilerplateTitle"
+          class="font-bold text-red-600 uppercase"
+          v-text="trad.boilerplateTitle"
+        ></h6>
+      </Transition>
+      <Transition name="slide" mode="out-in">
+        <p
+          :key="trad.boilerplatePresentation"
+          class="italic font-semibold text-slate-500"
+          v-text="trad.boilerplatePresentation"
+        ></p>
+      </Transition>
+    </div>
   </div>
 </template>

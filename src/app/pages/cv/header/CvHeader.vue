@@ -15,8 +15,12 @@ const availableAt = new Date('08/31/2021');
 const availableDate = computed(() =>
   getRightMonth(availableAt, isEnglish.value),
 );
+
+const available = false;
 const availableText = computed(() =>
-  getAvalaibleText(availableDate.value, isEnglish.value),
+  available
+    ? getAvalaibleText(availableDate.value, isEnglish.value)
+    : 'En poste chez Extia depuis le 05/09/2022',
 );
 
 const jobTitle = computed(() =>
@@ -43,7 +47,7 @@ const copy = async () =>
       width="175"
       height="175"
       class="flex-shrink-0 rounded-3xl h-40vw w-40vw"
-      src="https://media-exp1.licdn.com/dms/image/C4E03AQE3u0ruX9NXUw/profile-displayphoto-shrink_200_200/0/1645301988736?e=1650499200&v=beta&t=3D4BTQqIF_YwntpweX4Q43ccgxr8khcFv9yNDBy8YM8"
+      src="/cv_profile_picture.jpeg"
       alt="CV profile picture"
     />
     <div class="flex items-stretch justify-between flex-grow">

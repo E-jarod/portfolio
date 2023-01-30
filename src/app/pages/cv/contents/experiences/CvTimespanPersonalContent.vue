@@ -14,75 +14,106 @@ const trad = reactive({
       ? 'Web application that manages different types of associations'
       : "Application web qui gère différents types d'associations",
   ),
-  todoAssoListFromScratch: computed(() =>
+  todoAssoList: computed(() =>
     isEnglish.value
-      ? 'Planning / Modeling from scratch'
-      : 'Planification / Modélisation from scratch',
-  ),
-  todoAssoListScaffold: computed(() =>
-    isEnglish.value
-      ? 'Scaffold front-end and tooling configurations'
-      : 'Scaffold front-end et configurations des outils',
-  ),
-  todoAssoSomePages: computed(() =>
-    isEnglish.value
-      ? 'Development of a few pages'
-      : 'Dévelopement de quelques pages',
+      ? [
+          'projects from scratch',
+          'front-end scaffold',
+          'tooling configurations',
+          'some pages dev participation',
+        ]
+      : [
+          'projets from scratch',
+          'scaffold front-end',
+          'configurations des outils',
+          'participation au dev de certaines pages',
+        ],
   ),
   devFamilyPresentation: computed(() =>
     isEnglish.value
       ? 'Web app used to manage the technical parts of DevFamily'
       : 'App web qui sert à gerer les parties techniques de DevFamily',
   ),
-  devFamilyListScaffold: computed(() =>
+  devFamilyList: computed(() =>
     isEnglish.value
-      ? 'Scaffold front-end, back-end and database'
-      : 'Scaffold front-end, back-end et base de données',
+      ? [
+          'projects from scratch',
+          'front-end scaffold',
+          'tooling configurations',
+          'front-end scaffold',
+          'back-end scaffold',
+          'database scaffold',
+        ]
+      : [
+          'projets from scratch',
+          'scaffold front-end',
+          'configurations des outils',
+          'scaffold front-end',
+          'scaffold back-end',
+          'scaffold base de données',
+        ],
   ),
 });
 </script>
 
 <template>
-  <div>
-    <h6 class="font-bold text-red-600 uppercase">
-      Todo Asso ( app &
+  <div class="flex flex-col items-start justify-between space-y-2">
+    <div class="flex items-center justify-between w-full">
+      <h6 class="font-bold text-red-600 uppercase">
+        Todo Asso ( app &
+        <Transition name="slide" mode="out-in">
+          <span
+            :key="trad.titlePart"
+            v-text="trad.titlePart + ' )'"
+          ></span>
+        </Transition>
+      </h6>
       <Transition name="slide" mode="out-in">
-        <span :key="trad.titlePart" v-text="trad.titlePart + ' )'"></span>
+        <p
+          :key="trad.todoAssoPresentation"
+          class="italic font-semibold text-slate-500"
+          v-text="trad.todoAssoPresentation"
+        ></p>
       </Transition>
-    </h6>
+    </div>
     <Transition name="slide" mode="out-in">
-      <p
-        :key="trad.todoAssoPresentation"
-        class="italic text-slate-500"
-        v-text="trad.todoAssoPresentation"
-      ></p>
-    </Transition>
-    <Transition name="slide" mode="out-in">
-      <ul :key="trad.todoAssoListFromScratch" class="list-disc pl-5vw">
-        <li v-text="trad.todoAssoListFromScratch"></li>
-        <li v-text="trad.todoAssoListScaffold"></li>
-        <li v-text="trad.todoAssoSomePages"></li>
+      <ul :key="trad.todoAssoList[0]" class="flex flex-wrap gap-2">
+        <li
+          v-for="(item, index) in trad.todoAssoList"
+          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
+          :key="index"
+          v-text="item"
+        ></li>
       </ul>
     </Transition>
   </div>
-  <div>
-    <h6 class="font-bold text-red-600 uppercase">
-      DevFamily ( app &
+  <div class="flex flex-col items-start justify-between space-y-2">
+    <div class="flex items-center justify-between w-full">
+      <h6 class="font-bold text-red-600 uppercase">
+        DevFamily ( app &
+        <Transition name="slide" mode="out-in">
+          <span
+            :key="trad.titlePart"
+            v-text="trad.titlePart + ' )'"
+          ></span>
+        </Transition>
+      </h6>
       <Transition name="slide" mode="out-in">
-        <span :key="trad.titlePart" v-text="trad.titlePart + ' )'"></span>
+        <p
+          :key="trad.devFamilyPresentation"
+          class="italic font-semibold text-slate-500"
+          v-text="trad.devFamilyPresentation"
+        ></p>
       </Transition>
-    </h6>
+    </div>
     <Transition name="slide" mode="out-in">
-      <p
-        :key="trad.devFamilyPresentation"
-        class="italic text-slate-500"
-        v-text="trad.devFamilyPresentation"
-      ></p>
-    </Transition>
-    <Transition name="slide" mode="out-in">
-      <ul :key="trad.devFamilyListScaffold" class="list-disc pl-5vw">
-        <li v-text="trad.todoAssoListFromScratch"></li>
-        <li v-text="trad.devFamilyListScaffold"></li>
+      <ul :key="trad.devFamilyList[0]" class="flex flex-wrap gap-2">
+        <li
+          v-for="(item, index) in trad.devFamilyList"
+          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
+          :key="index"
+          v-text="item"
+        ></li>
       </ul>
     </Transition>
   </div>

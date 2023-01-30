@@ -11,26 +11,40 @@ const isEnglish = inject('is-english') as ProvidedIsEnglish;
 
 const timespans: TimespanInfo[] = [
   reactive({
-    imgSrc:
-      'https://media-exp1.licdn.com/dms/image/C4D0BAQHY65mUGU6apw/company-logo_100_100/0/1575540140277?e=1652918400&v=beta&t=FMQ7yz1OjNOt7eU08vKN2m9Vt922Kwlbtla8OdLL8D8',
-    imgAlt: 'Ateliom logo',
+    imgSrc: '/arval_logo.jpeg',
+    imgAlt: 'Arval logo',
+    title: computed(() =>
+      isEnglish.value
+        ? "Angular Developer | Extia's Consultant"
+        : 'Développeur Angular | Consultant chez Extia',
+    ),
+    structureName: 'Arval',
+    locationName: 'Rueil-Malmaison',
+    locationIcon: ['fas', 'location-dot'] as IconProp,
+    structureIcon: ['fas', 'briefcase'] as IconProp,
+    badgeText: computed(() => (isEnglish.value ? 'Full time' : 'CDI')),
+    startDate: new Date(2022, 8, 5),
+  }),
+  reactive({
+    imgSrc: '/improba_logo.jpeg',
+    imgAlt: 'Improba logo',
     title: computed(() =>
       isEnglish.value
         ? 'Full Stack JS Developer'
         : 'Développeur Full Stack JS',
     ),
-    structureName: 'Ateliom',
+    structureName: 'Improba',
     locationName: 'Paris',
-    locationIcon: ['fas', 'briefcase'] as IconProp,
-    structureIcon: ['fas', 'location-dot'] as IconProp,
+    locationIcon: ['fas', 'location-dot'] as IconProp,
+    structureIcon: ['fas', 'briefcase'] as IconProp,
     badgeText: computed(() =>
       isEnglish.value ? 'Apprenticeship' : 'Alternance',
     ),
     startDate: new Date(2021, 8, 6),
+    endDate: new Date(2022, 7, 31),
   }),
   reactive({
-    imgSrc:
-      'https://media-exp1.licdn.com/dms/image/C4D0BAQH0QUe8XKf3dA/company-logo_100_100/0/1603971739251?e=1652918400&v=beta&t=k3q8PonRrV18bccJCpeA1gfPA8Gkp_Rfew6i3iTSrfE',
+    imgSrc: '/pass_technologie_logo.jpeg',
     imgAlt: 'PASS Technologie logo',
     title: computed(() =>
       isEnglish.value
@@ -39,8 +53,8 @@ const timespans: TimespanInfo[] = [
     ),
     structureName: 'Pass Technologie',
     locationName: 'Paris',
-    locationIcon: ['fas', 'briefcase'] as IconProp,
-    structureIcon: ['fas', 'location-dot'] as IconProp,
+    locationIcon: ['fas', 'location-dot'] as IconProp,
+    structureIcon: ['fas', 'briefcase'] as IconProp,
     badgeText: computed(() =>
       isEnglish.value ? 'Apprenticeship' : 'Alternance',
     ),
@@ -48,8 +62,7 @@ const timespans: TimespanInfo[] = [
     endDate: new Date(2021, 9, 31),
   }),
   reactive({
-    imgSrc:
-      'https://media-exp2.licdn.com/dms/image/C4D0BAQH94qXpEjr0AQ/company-logo_100_100/0/1632330797331?e=1652918400&v=beta&t=OouaKv3SwJ2zKdvsXB0xuqHbMECPKfYddj8ZFOGK9_M',
+    imgSrc: '/devfamily_logo.jpeg',
     imgAlt: 'DevFamily logo',
     title: computed(() =>
       isEnglish.value
@@ -71,7 +84,7 @@ const timespans: TimespanInfo[] = [
 <template>
   <template v-for="(timespan, index) in timespans" :key="index">
     <hr
-      v-if="index === 2"
+      v-if="index === 3"
       class="inline-block border-2 border-slate-100"
     />
     <CvTimespan
