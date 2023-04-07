@@ -36,7 +36,7 @@ const openCv = inject('open-cv') as ProvidedOpenCv;
   /* responsive A4 size */
   @apply my-[calc(100/23*1vw)] w-[calc(100/23*21vw)] h-[calc(100/23*29.7vw)];
   /* print styling */
-  @apply print:[color-adjust:exact] print:[size:A4] print:[zoom:100%] print:shadow-none print:flex print:m-0 print:p-0 print:break-after-page print:w-[21cm] print:h-[29.7cm] print:border-0 print:rounded-none;
+  @apply print:[print-color-adjust:exact] print:[size:A4] print:[zoom:100%] print:shadow-none print:flex print:m-0 print:p-0 print:break-after-page print:w-[21cm] print:h-[29.7cm] print:border-0 print:rounded-none;
   /* zoom: 100%; */
 }
 @page {

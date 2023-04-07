@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import eslintPlugin from 'vite-plugin-eslint';
+import eslint from 'vite-plugin-eslint';
 import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
@@ -19,6 +18,10 @@ export default defineConfig({
       '@layouts': path.resolve(__dirname, './src/app/shared/layouts'),
     },
   },
+  server: {
+    port: 3000,
+  },
+  appType: 'spa',
   publicDir: 'src/assets',
-  plugins: [vue(), eslintPlugin()],
+  plugins: [vue(), eslint()],
 });

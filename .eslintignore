@@ -1,2 +1,7 @@
 /dist
 /node_modules
+
+.eslintrc*
+vite.config*
+postcss.config*
+tailwind.config*

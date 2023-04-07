@@ -14,13 +14,11 @@
     /* STRICT MODE CONFIGS END */
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    // TODO: activate one day
-    "exactOptionalPropertyTypes": false,
+    "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
-    // TODO: verify
-    "noPropertyAccessFromIndexSignature": false,
+    "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -38,8 +36,7 @@
     // "noEmit": false,
     //
     /// JS SUPPORT ///
-    // TODO: deactivate one day
-    "allowJs": true,
+    "allowJs": false,
     //
     /// EDITOR SUPPORT ///
     "disableSizeLimit": false,

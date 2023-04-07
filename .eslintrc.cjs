@@ -1,27 +1,16 @@
-const { resolve } = require('path');
-
 module.exports = {
-  // https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy
-  // This option interrupts the configuration hierarchy at this file
-  // Remove this if you have an higher level ESLint config file (it usually happens into a monorepos)
   root: true,
-  // https://eslint.vuejs.org/user-guide/#how-to-use-custom-parser
-  // Must use parserOptions instead of "parser" to allow vue-eslint-parser to keep working
-  // `parser: 'vue-eslint-parser'` is already included with any 'plugin:vue/**' config and should bue omitted
   parser: 'vue-eslint-parser',
   parserOptions: {
-    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser#configuration
-    // https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#eslint
-    // Needed to make the parser take into account 'vue' files
     extraFileExtensions: ['.vue'],
     parser: '@typescript-eslint/parser',
-    project: resolve(__dirname, './tsconfig.json'),
-    tsconfigRootDir: __dirname,
-    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: 'module', // Allows for the use of imports
+    project: './tsconfig.json',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   env: {
     browser: true,
+    es2022: true,
     'vue/setup-compiler-macros': true,
   },
   // Rules order is important, please avoid shuffling them
@@ -82,5 +71,8 @@ module.exports = {
     '@typescript-eslint/restrict-template-expressions': 'warn',
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+
+    // Vue
+    'vue/no-v-text-v-html-on-component': 0,
   },
 };
