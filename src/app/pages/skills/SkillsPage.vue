@@ -4,14 +4,34 @@
 // number 20
 // number 27
 // https://learntocodewith.me/posts/portfolio-tips/
+import { reactive } from 'vue';
+
+export interface IRadarSkill {
+  label: string;
+  value: string | number;
+}
+
+const state = reactive({
+  radarSkills: [] satisfies IRadarSkill[],
+});
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold">My favorite workflow</h1>
-  <ul>
-    <li>Step 1</li>
-    <li>Step 2</li>
-    <li>Step 3</li>
-  </ul>
+  <!-- todo vim : format on save prettier -->
+  <!-- todo vim : sidebar to right -->
+  <!-- todo vim : unit tests -->
+  <!-- todo vim : copy paste -->
+  <h1 class="text-3xl font-bold">Skills</h1>
+
+  <div>
+    <h2 class="text-xl text-red-500 font-bold">Radar chart</h2>
+    {{ state.radarSkills.length }}
+  </div>
+
+  <div class="my-5">
+    hard skills : JS, TS, Angular, Vue, ... + SOFT SKILLS
+  </div>
+  <div class="my-5">Projects preview (with links)</div>
+  <div class="my-5">Projects preview (without links)</div>
   <!-- <WorkInProgress /> -->
 </template>

@@ -1,11 +1,11 @@
-import type { Config } from 'tailwindcss'
-import { default as defaultTheme } from 'tailwindcss/defaultTheme'
+import type { Config } from 'tailwindcss';
+import { default as defaultTheme } from 'tailwindcss/defaultTheme';
 
 // const defaultTheme = require('tailwindcss/defaultTheme');
 
-type Tuple = [string, string]
+type Tuple = [string, string];
 
-const unwantedKeys = ([key]:Tuple) => !['0', 'px'].includes(key);
+const unwantedKeys = ([key]: Tuple) => !['0', 'px'].includes(key);
 const remValuesToVw = ([key, value]: Tuple) => {
   const newKey = `${key}vw`;
 
@@ -31,7 +31,6 @@ const vwFontSize = vwSpacingFunction(
   Object.entries(defaultTheme.fontSize).map(([k, v]) => [k, v[0]]),
 );
 
-
 export default {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -46,5 +45,4 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config
-
+} satisfies Config;
