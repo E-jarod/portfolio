@@ -20,10 +20,13 @@ import {
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 import {
   faAndroid,
+  faAws,
   faDiscord,
+  faDocker,
   faGitAlt,
   faGithub,
   faGitlab,
+  faJava,
   faLinkedin,
   faNodeJs,
   faPython,
@@ -67,6 +70,9 @@ library.add(
   faAndroid,
   faPython,
   faGitAlt,
+  faDocker,
+  faAws,
+  faJava,
 );
 
 export const FaIcon = FontAwesomeIcon;

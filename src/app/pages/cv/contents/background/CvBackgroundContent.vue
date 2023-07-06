@@ -23,6 +23,7 @@ const timespans: TimespanInfo[] = [
     locationIcon: ['fas', 'location-dot'] as IconProp,
     badgeText: 'RNCP VI',
     startDate: new Date(2021, 8, 20),
+    endDate: new Date(2022, 7, 31),
   }),
   reactive({
     imgSrc: '/cfa_insta_logo.jpeg',

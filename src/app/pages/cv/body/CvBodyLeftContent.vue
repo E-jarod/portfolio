@@ -4,7 +4,7 @@ import { computed, inject, reactive } from 'vue';
 import CvBodyCard from '../components/cards/CvBodyCard.vue';
 import CvTargetsContent from '../contents/targets/CvTargetsContent.vue';
 import CvLanguagesContent from '../contents/languages/CvLanguagesContent.vue';
-import CvHobbiesContent from '../contents/hobbies/CvHobbiesContent.vue';
+// import CvHobbiesContent from '../contents/hobbies/CvHobbiesContent.vue';
 import CvSkillsContent from '../contents/skills/CvSkillsContent.vue';
 import { ProvidedIsEnglish } from '../cv.model';
 
@@ -31,7 +31,7 @@ const titles = reactive({
   <CvBodyCard :title="titles.languages">
     <CvLanguagesContent />
   </CvBodyCard>
-  <CvBodyCard height="h-60vw" :title="titles.hobbies">
+  <!-- <CvBodyCard height="h-60vw" :title="titles.hobbies">
     <CvHobbiesContent />
-  </CvBodyCard>
+  </CvBodyCard> -->
 </template>

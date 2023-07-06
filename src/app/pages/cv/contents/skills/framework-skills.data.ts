@@ -55,6 +55,15 @@ export const frameworkSkills: CvSkillProps[] = [
     },
   },
   {
+    skillName: 'Express / Fastify',
+    isConfirmedSkill: true,
+    bgColor: 'bg-green-100',
+    faIcon: {
+      color: 'text-green-600',
+      icon: ['fab', 'node-js'],
+    },
+  },
+  {
     separator: true,
     skillName: 'Android',
     bgColor: 'bg-green-100',

@@ -13,8 +13,8 @@ export interface CvTimespanProps {
   locationIcon: IconProp;
   locationName: string;
   startDate: Date;
-  endDate?: Date;
-  badgeText?: string;
+  endDate?: Date | undefined;
+  badgeText?: string | undefined;
 }
 
 const props = defineProps<CvTimespanProps>();

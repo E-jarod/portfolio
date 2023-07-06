@@ -23,9 +23,10 @@ const state = reactive({
   <!-- todo vim : copy paste -->
   <h1 class="text-3xl font-bold">Skills</h1>
 
-  <div>
+  <div class="flex w-full justify-between">
     <h2 class="text-xl text-red-500 font-bold">Radar chart</h2>
     {{ state.radarSkills.length }}
+    <div>view selector</div>
   </div>
 
   <div class="my-5">

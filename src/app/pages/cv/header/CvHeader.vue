@@ -24,7 +24,7 @@ const availableText = computed(() =>
 );
 
 const jobTitle = computed(() =>
-  isEnglish.value ? ' Developer' : 'Développeur ',
+  isEnglish.value ? ' Full Stack Developer' : 'Développeur Full Stack ',
 );
 
 const phoneNumber = computed(() =>

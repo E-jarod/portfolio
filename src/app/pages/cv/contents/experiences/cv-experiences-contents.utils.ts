@@ -4,8 +4,8 @@ import CvTimespanPassTechContent from './CvTimespanPassTechContent.vue';
 import CvTimespanPersonalContent from './CvTimespanPersonalContent.vue';
 
 export const timespanContents = [
+  CvTimespanPersonalContent,
   CvTimespanArvalContent,
   CvTimespanAteliomContent,
   CvTimespanPassTechContent,
-  CvTimespanPersonalContent,
 ];

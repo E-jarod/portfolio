@@ -11,6 +11,23 @@ const isEnglish = inject('is-english') as ProvidedIsEnglish;
 
 const timespans: TimespanInfo[] = [
   reactive({
+    imgSrc: '/ambulance_francois_premier.png',
+    imgAlt: 'DoctoAssistance logo',
+    title: computed(() =>
+      isEnglish.value
+        ? 'Full Stack JS Developer'
+        : 'Développeur Full Stack JS',
+    ),
+    structureName: 'DoctoAssistance',
+    locationName: 'Remote',
+    locationIcon: ['fas', 'house-laptop'] as IconProp,
+    structureIcon: ['fas', 'users'] as IconProp,
+    badgeText: computed(() =>
+      isEnglish.value ? 'Freelance' : 'Freelance',
+    ),
+    startDate: new Date(2022, 8, 1),
+  }),
+  reactive({
     imgSrc: '/arval_logo.jpeg',
     imgAlt: 'Arval logo',
     title: computed(() =>
@@ -61,31 +78,14 @@ const timespans: TimespanInfo[] = [
     startDate: new Date(2019, 7, 14),
     endDate: new Date(2021, 9, 31),
   }),
-  reactive({
-    imgSrc: '/devfamily_logo.jpeg',
-    imgAlt: 'DevFamily logo',
-    title: computed(() =>
-      isEnglish.value
-        ? 'Full Stack JS Developer'
-        : 'Développeur Full Stack JS',
-    ),
-    structureName: 'DevFamily',
-    locationName: 'Remote',
-    locationIcon: ['fas', 'house-laptop'] as IconProp,
-    structureIcon: ['fas', 'users'] as IconProp,
-    badgeText: computed(() =>
-      isEnglish.value ? 'Personal free time' : 'Temps libre personnel',
-    ),
-    startDate: new Date(2020, 7, 1),
-  }),
 ];
 </script>
 
 <template>
   <template v-for="(timespan, index) in timespans" :key="index">
     <hr
-      v-if="index === 3"
-      class="inline-block border-2 border-slate-100"
+      v-if="index === 1"
+      class="block border-8 border-b-0 border-sky-200 -my-10"
     />
     <CvTimespan
       :img-src="timespan.imgSrc"
@@ -99,7 +99,7 @@ const timespans: TimespanInfo[] = [
       :start-date="timespan.startDate"
       :end-date="timespan.endDate"
     >
-      <component :is="timespanContents[index]"></component>
+      <Component :is="timespanContents[index]" />
     </CvTimespan>
   </template>
 </template>

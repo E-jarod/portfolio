@@ -36,16 +36,16 @@ const trad = reactive({
         ],
   ),
   // Boilerplate
-  boilerplateTitle: computed(() =>
-    isEnglish.value
-      ? 'Quasar.js & Nest.js Boilerplate'
-      : 'Boilerplate Quasar.js & Nest.js',
-  ),
-  boilerplatePresentation: computed(() =>
-    isEnglish.value
-      ? 'Front-end & back-end boilerplates'
-      : 'Boilerplate front-end & back-end',
-  ),
+  // boilerplateTitle: computed(() =>
+  //   isEnglish.value
+  //     ? 'Quasar.js & Nest.js Boilerplate'
+  //     : 'Boilerplate Quasar.js & Nest.js',
+  // ),
+  // boilerplatePresentation: computed(() =>
+  //   isEnglish.value
+  //     ? 'Front-end & back-end boilerplates'
+  //     : 'Boilerplate front-end & back-end',
+  // ),
 });
 </script>
 
@@ -72,7 +72,7 @@ const trad = reactive({
       </ul>
     </Transition>
   </div>
-  <div class="flex flex-col items-start justify-between">
+  <!-- <div class="flex flex-col items-start justify-between">
     <div class="flex items-center justify-between w-full">
       <Transition name="slide" mode="out-in">
         <h6
@@ -89,5 +89,5 @@ const trad = reactive({
         ></p>
       </Transition>
     </div>
-  </div>
+  </div> -->
 </template>
