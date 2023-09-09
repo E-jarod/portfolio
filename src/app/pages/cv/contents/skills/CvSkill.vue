@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 import type {
   TwPaddingsForCv,
@@ -8,7 +9,7 @@ import type {
 import type {
   TwBgColors,
   TwFillColors,
-  TwTextColors,
+  // TwTextColors,
 } from '@shared/utils/tw-colors.utils';
 
 export interface CvSkillProps {
@@ -18,10 +19,11 @@ export interface CvSkillProps {
   skillName: string;
   padding?: RepeatString<TwPaddingsForCv, 2>;
   bgColor: TwBgColors;
-  faIcon?: {
-    color: TwTextColors;
-    icon: IconProp;
-  };
+  // faIcon?: {
+  //   color: string; //TwTextColors;
+  //   icon: IconProp;
+  // };
+  faIcon?: any
   svgIcon?: {
     rounded?: boolean;
     color: TwFillColors;
@@ -58,8 +60,8 @@ defineProps<CvSkillProps>();
       <fa-icon
         v-else-if="!isSvg && faIcon"
         class="w-8vw h-8vw"
-        :class="[faIcon.color]"
-        :icon="faIcon.icon"
+        :class="([faIcon.color])"
+        :icon="(faIcon.icon)"
       ></fa-icon>
       <span v-else>ERR</span>
     </div>

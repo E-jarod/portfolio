@@ -99,7 +99,7 @@ const timespans: TimespanInfo[] = [
       :start-date="timespan.startDate"
       :end-date="timespan.endDate"
     >
-      <Component :is="timespanContents[index]" />
+      <Component :is="timespanContents[index] as any" />
     </CvTimespan>
   </template>
 </template>
