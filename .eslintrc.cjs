@@ -49,6 +49,7 @@ module.exports = {
     'class-methods-use-this': 0,
 
     'import/first': 'off',
+    'import/named': 'off',
     'import/namespace': 'error',
     'import/default': 'error',
     'import/export': 'error',

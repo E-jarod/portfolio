@@ -26,8 +26,8 @@
     /// MODULES ///
     "allowUmdGlobalAccess": false,
     "baseUrl": ".",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "noResolve": false,
     "resolveJsonModule": true,
     //
@@ -58,7 +58,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noLib": false,
-    // "target": "esnext",
     "target": "ES2017",
     //
     /// OUTPUT FORMATTING ///
@@ -77,7 +76,8 @@
     "useDefineForClassFields": true,
     "jsx": "preserve",
     "sourceMap": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
     "paths": {
       "@app/*": ["src/app/*"],
       "@pages/*": ["src/app/pages/*"],
@@ -93,5 +93,6 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
-  ]
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
