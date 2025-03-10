@@ -15,10 +15,11 @@ const closeModal = (): void => {
 </script>
 
 <template>
+  <!-- eslint-disable vue/no-v-text-v-html-on-component -->
   <div v-show="openModal" class="z-20 md:hidden">
     <div
-      class="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80"
       id="headlessui-dialog-overlay-7"
+      class="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-slate-900/80"
       aria-hidden="true"
       @click="closeModal()"
     ></div>
@@ -53,8 +54,8 @@ const closeModal = (): void => {
           <router-link
             class="inline-block w-full hover:text-red-500 dark:hover:text-red-400"
             :to="link.to"
-            v-text="link.label"
             @click="closeModal()"
+            v-text="link.label"
           ></router-link>
         </li>
       </ul>
@@ -65,8 +66,8 @@ const closeModal = (): void => {
             :href="link.socialLink"
             target="_blank"
             rel="noopener noreferer"
-            v-text="link.label"
             @click="closeModal()"
+            v-text="link.label"
           ></a>
         </li>
       </ul>

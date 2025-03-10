@@ -2,13 +2,12 @@
 import { computed, inject, reactive } from 'vue';
 
 import CvBodyCard from '../components/cards/CvBodyCard.vue';
-import CvTargetsContent from '../contents/targets/CvTargetsContent.vue';
 import CvLanguagesContent from '../contents/languages/CvLanguagesContent.vue';
-// import CvHobbiesContent from '../contents/hobbies/CvHobbiesContent.vue';
 import CvSkillsContent from '../contents/skills/CvSkillsContent.vue';
-import { ProvidedIsEnglish } from '../cv.model';
+import type { ProvidedIsEnglish } from '../cv.model';
+// import CvHobbiesContent from '../contents/hobbies/CvHobbiesContent.vue';
+// import CvTargetsContent from '../contents/targets/CvTargetsContent.vue';
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const isEnglish: ProvidedIsEnglish = inject('is-english')!;
 
 const titles = reactive({
@@ -22,9 +21,9 @@ const titles = reactive({
 </script>
 
 <template>
-  <CvBodyCard height="h-56vw" :title="titles.target">
+  <!-- <CvBodyCard height="h-56vw" :title="titles.target">
     <CvTargetsContent />
-  </CvBodyCard>
+  </CvBodyCard> -->
   <CvBodyCard is-red :title="titles.skills" height="flex-grow">
     <CvSkillsContent />
   </CvBodyCard>

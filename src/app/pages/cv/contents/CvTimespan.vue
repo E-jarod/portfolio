@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { computed, h, inject } from 'vue';
-
-import { ProvidedIsEnglish } from '../cv.model';
+import type { ProvidedIsEnglish } from '../cv.model';
 
 export interface CvTimespanProps {
   imgSrc: string;
@@ -42,16 +41,19 @@ const ongoingBadgeText = computed(() =>
 );
 
 const renderTitleWithSeparatorsIfNeeded = () => {
-  const separator = h('small', { class: 'text-xlvw text-slate-400' }, '|');
-  const titleWithSeparators = props.title.split('|');
+  const separatorHtmlElement = h(
+    'small',
+    { class: 'text-xlvw text-slate-400' },
+    '|',
+  );
 
-  const title = [];
-  for (const [index, text] of titleWithSeparators.entries()) {
-    if (index > 0) title.push(separator);
-    title.push(text);
-  }
+  const titleWithHtmlSeparators = props.title
+    .split('|')
+    .flatMap((text, index) =>
+      index > 0 ? [separatorHtmlElement, text] : [text],
+    );
 
-  return h('span', title);
+  return h('span', titleWithHtmlSeparators);
 };
 </script>
 
@@ -74,6 +76,7 @@ const renderTitleWithSeparatorsIfNeeded = () => {
             >
               <!-- h() function usage -->
               <renderTitleWithSeparatorsIfNeeded />
+
               <small
                 v-if="endDate === '?'"
                 :key="ongoingBadgeText"

@@ -1,5 +1,4 @@
 module.exports = {
-  root: true,
   parser: 'vue-eslint-parser',
   parserOptions: {
     extraFileExtensions: ['.vue'],
@@ -10,7 +9,6 @@ module.exports = {
   },
   env: {
     browser: true,
-    es2022: true,
     'vue/setup-compiler-macros': true,
   },
   // Rules order is important, please avoid shuffling them

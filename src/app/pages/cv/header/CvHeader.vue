@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue';
 
-import { ProvidedIsEnglish } from '../cv.model';
+import type { ProvidedIsEnglish } from '../cv.model';
 import {
   getAvalaibleText,
-  getRightMonth,
   getMyAge,
+  getRightMonth,
 } from './cv-header.utils';
 
 const isEnglish = inject('is-english') as ProvidedIsEnglish;
 const myAge = getMyAge();
 
-const availableAt = new Date('08/31/2021');
+const availableAt = new Date('03/15/2025');
 const availableDate = computed(() =>
   getRightMonth(availableAt, isEnglish.value),
 );
@@ -20,7 +20,7 @@ const available = false;
 const availableText = computed(() =>
   available
     ? getAvalaibleText(availableDate.value, isEnglish.value)
-    : 'En poste chez Extia depuis le 05/09/2022',
+    : 'En poste chez WeSave depuis le 22/01/2024',
 );
 
 const jobTitle = computed(() =>
@@ -31,9 +31,9 @@ const phoneNumber = computed(() =>
   isEnglish.value ? '+33 7 68 45 86 63' : '07 68 45 86 63',
 );
 
-const currentAge = computed(() => {
-  return isEnglish.value ? `${myAge} years old` : `${myAge} ans`;
-});
+const currentAge = computed(() =>
+  isEnglish.value ? `${myAge} years old` : `${myAge} ans`,
+);
 
 const copy = async () =>
   await navigator.clipboard.writeText('ejilane.jarod');

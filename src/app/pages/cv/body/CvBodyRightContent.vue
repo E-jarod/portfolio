@@ -2,11 +2,10 @@
 import { computed, inject, reactive } from 'vue';
 
 import CvBodyCard from '../components/cards/CvBodyCard.vue';
-import CvExperiencesContent from '../contents/experiences/CvExperiencesContent.vue';
 import CvBackgroundContent from '../contents/background/CvBackgroundContent.vue';
-import { ProvidedIsEnglish } from '../cv.model';
+import CvExperiencesContent from '../contents/experiences/CvExperiencesContent.vue';
+import type { ProvidedIsEnglish } from '../cv.model';
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const isEnglish: ProvidedIsEnglish = inject('is-english')!;
 
 const titles = reactive({

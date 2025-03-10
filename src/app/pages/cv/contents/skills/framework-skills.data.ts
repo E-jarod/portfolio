@@ -1,9 +1,9 @@
-import { CvSkillProps } from './cv-skill-props.model';
+import type { CvSkillProps } from './cv-skill-props.model';
 
 export const frameworkSkills: CvSkillProps[] = [
   {
     skillName: 'Flutter',
-    isConfirmedSkill: true,
+    isConfirmedSkill: false,
     bgColor: 'bg-sky-100',
     isSvg: true,
     svgIcon: {
@@ -13,6 +13,26 @@ export const frameworkSkills: CvSkillProps[] = [
     },
     padding: 'p-2vw pr-3vw',
     // padding: 'p-2vw pr-3vw',
+  },
+  {
+    skillName: 'React',
+    isConfirmedSkill: true,
+    bgColor: 'bg-blue-100',
+    faIcon: {
+      color: 'text-blue-500',
+      icon: ['fab', 'react'],
+    },
+  },
+  {
+    skillName: 'TailwindCSS',
+    isConfirmedSkill: true,
+    bgColor: 'bg-cyan-100',
+    isSvg: true,
+    svgIcon: {
+      id: 'icon-tailwind',
+      color: 'fill-cyan-500',
+      path: 'M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z',
+    },
   },
   {
     skillName: 'Vue',
@@ -38,14 +58,6 @@ export const frameworkSkills: CvSkillProps[] = [
     },
   },
   {
-    skillName: 'React',
-    bgColor: 'bg-blue-100',
-    faIcon: {
-      color: 'text-blue-500',
-      icon: ['fab', 'react'],
-    },
-  },
-  {
     skillName: 'Nest.js',
     isConfirmedSkill: true,
     bgColor: 'bg-green-100',
@@ -64,8 +76,8 @@ export const frameworkSkills: CvSkillProps[] = [
     },
   },
   {
-    separator: true,
     skillName: 'Android',
+    separator: true,
     bgColor: 'bg-green-100',
     faIcon: {
       color: 'text-green-500',

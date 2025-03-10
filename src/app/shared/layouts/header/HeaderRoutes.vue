@@ -15,6 +15,7 @@ const openMobileModal = () => {
 </script>
 
 <template>
+  <!-- eslint-disable vue/no-v-text-v-html-on-component -->
   <div class="flex items-center">
     <div class="ml-2 -my-1 -mr-1 md:hidden">
       <button

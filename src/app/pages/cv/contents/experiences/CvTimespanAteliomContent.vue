@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inject, computed, reactive } from 'vue';
+import { computed, inject, reactive } from 'vue';
 
 import type { ProvidedIsEnglish } from '../../cv.model';
 
@@ -15,6 +15,10 @@ const trad = reactive({
   dosimaList: computed(() =>
     isEnglish.value
       ? [
+          'vue 3',
+          'quasar.js',
+          'nest.js',
+          'postgresql',
           'front-end scaffold',
           'backend scaffold',
           'database scaffold',
@@ -25,6 +29,10 @@ const trad = reactive({
           'administration pages',
         ]
       : [
+          'vue 3',
+          'quasar.js',
+          'nest.js',
+          'postgresql',
           'scaffold front-end',
           'scaffold back-end',
           'scaffold base de données',
@@ -65,8 +73,8 @@ const trad = reactive({
       <ul :key="trad.dosimaList[0]" class="flex flex-wrap gap-2">
         <li
           v-for="(item, index) in trad.dosimaList"
-          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
           :key="index"
+          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
           v-text="item"
         ></li>
       </ul>

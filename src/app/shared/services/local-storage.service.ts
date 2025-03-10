@@ -1,7 +1,6 @@
 export class LocalStorageService {
   private static _instance?: LocalStorageService;
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   private constructor() {}
 
   static get instance(): LocalStorageService {

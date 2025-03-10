@@ -2,10 +2,16 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "editor.formatOnType": false,
-  // "editor.codeActionsOnSave": {
-  //   "source.fixAll.eslint": true,
-  //   "source.fixAll.stylelint": true
-  // },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "always",
+    "source.removeUnusedImports": "explicit",
+    "source.addMissingImports.ts": "explicit",
+    "source.organizeImports": "explicit",
+    "source.sortImports": "explicit",
+    "source.fixAll.ts": "explicit",
+    "source.removeUnused.ts": "explicit"
+  },
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
@@ -15,7 +21,6 @@
   "tailwindCSS.emmetCompletions": true,
   "editor.rulers": [75],
   "eslint.validate": ["vue", "javascript", "typescript"],
-  "eslint.packageManager": "yarn",
   // "vetur.validation.template": false
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

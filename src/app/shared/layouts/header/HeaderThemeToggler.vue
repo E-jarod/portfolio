@@ -6,9 +6,9 @@ import { changeTheme } from '@utils/theme.utils';
   <button
     id="theme-toggler"
     type="button"
-    @click="changeTheme()"
     aria-haspopup="true"
     aria-expanded="false"
+    @click="changeTheme()"
   >
     <label
       id="theme-toggler-label"

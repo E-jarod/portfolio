@@ -1,35 +1,22 @@
 <script setup lang="ts">
-import { inject } from 'vue';
-
-import CvHeader from './header/CvHeader.vue';
 import CvBody from './body/CvBody.vue';
 import CvFooter from './footer/CvFooter.vue';
-import { ProvidedOpenCv } from './cv.model';
-
-const openCv = inject('open-cv') as ProvidedOpenCv;
+import CvHeader from './header/CvHeader.vue';
 </script>
 
 <template>
   <div
-    v-if="openCv"
     class="flex flex-col mx-auto shadow-2xl cv bg-slate-50 rounded-3xl shadow-slate-300 dark:shadow-slate-400"
   >
-    <!-- :class="{ hidden: !openCv }" -->
     <CvHeader />
     <CvBody />
     <CvFooter />
   </div>
-  <div
-    v-else
-    class="flex flex-col items-center justify-center mx-auto border-8 border-dashed border-slate-50 cv rounded-3xl"
-  >
-    <span class="inline-block text-3xl font-extrabold text-slate-50"
-      >CV Here</span
-    >
-  </div>
 </template>
 
 <style scoped>
+@import 'tailwindcss/theme' theme(reference);
+
 /* 1vw <=> 1.1 rem <=> 17.6 px */
 /* 10vw <=> 11 rem <=> 176 px */
 .cv {

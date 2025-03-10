@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { inject, computed, reactive } from 'vue';
+import { computed, inject, reactive } from 'vue';
 
 import type { ProvidedIsEnglish } from '../../cv.model';
 
@@ -15,11 +15,17 @@ const trad = reactive({
   promatList: computed(() =>
     isEnglish.value
       ? [
+          'angular 8',
+          'API REST',
+          'Java Sprint Boot',
           'project from scratch',
           'Figma mid-fidelity wireframe',
           'form filters management',
         ]
       : [
+          'angular 8',
+          'API REST',
+          'Java Sprint Boot',
           'projet from scratch',
           'Figma mid-fidelity wireframe',
           'gestion des filtres de form',
@@ -39,6 +45,8 @@ const trad = reactive({
   correlyceList: computed(() =>
     isEnglish.value
       ? [
+          'angular 11',
+          'bootstrap 4->5 migration',
           'web & mobile app',
           'UI redisign',
           'digital textbook catalogs',
@@ -49,6 +57,8 @@ const trad = reactive({
           'clean components',
         ]
       : [
+          'angular 11',
+          'migration bootstrap 4->5',
           'app web & mobile',
           "refonte de l'UI",
           'catalogues de manuels numériques',
@@ -63,7 +73,7 @@ const trad = reactive({
 
 <template>
   <div class="flex flex-col items-start justify-between space-y-2">
-    <div class="flex items-center justify-between w-full">
+    <div class="flex items-center justify-between w-full gap-40vw">
       <h6 class="w-2/5 font-bold text-red-600 uppercase">
         Promat Cloisons Vitrés
       </h6>
@@ -79,8 +89,8 @@ const trad = reactive({
       <ul :key="trad.promatList[0]" class="flex flex-wrap gap-2">
         <li
           v-for="(item, index) in trad.promatList"
-          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
           :key="index"
+          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
           v-text="item"
         ></li>
       </ul>
@@ -107,8 +117,8 @@ const trad = reactive({
       <ul :key="trad.correlyceList[0]" class="flex flex-wrap gap-2">
         <li
           v-for="(item, index) in trad.correlyceList"
-          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
           :key="index"
+          class="inline-flex p-1 px-2 font-bold rounded text-smvw text-sky-600 bg-sky-100"
           v-text="item"
         ></li>
       </ul>

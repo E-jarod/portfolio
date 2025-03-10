@@ -1,14 +1,13 @@
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
-
-import type {
-  TwPaddingsForCv,
-  RepeatString,
-} from '@shared/utils/tw-sizing.utils';
 import type {
   TwBgColors,
   TwFillColors,
   TwTextColors,
 } from '@shared/utils/tw-colors.utils';
+import type {
+  RepeatString,
+  TwPaddingsForCv,
+} from '@shared/utils/tw-sizing.utils';
 
 export interface CvSkillProps {
   isSvg?: boolean;
@@ -19,7 +18,7 @@ export interface CvSkillProps {
   bgColor: TwBgColors;
   faIcon?: {
     color: TwTextColors;
-    icon: IconProp;
+    icon: IconProp | string;
   };
   svgIcon?: {
     rounded?: boolean;

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-/* eslint-disable @typescript-eslint/no-explicit-any */
-// import type { IconProp } from '@fortawesome/fontawesome-svg-core';
-
 import type {
   TwPaddingsForCv,
   RepeatString,
@@ -9,27 +6,29 @@ import type {
 import type {
   TwBgColors,
   TwFillColors,
-  // TwTextColors,
 } from '@shared/utils/tw-colors.utils';
+import { FaIcon } from '@app/shared/utils/fa-icons.utils';
+import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface CvSkillProps {
-  isSvg?: boolean;
-  separator?: boolean;
-  isConfirmedSkill?: boolean;
+  isSvg?: boolean | undefined;
+  separator?: boolean | undefined;
+  isConfirmedSkill?: boolean | undefined;
   skillName: string;
-  padding?: RepeatString<TwPaddingsForCv, 2>;
+  padding?: RepeatString<TwPaddingsForCv, 2> | undefined;
   bgColor: TwBgColors;
-  // faIcon?: {
-  //   color: string; //TwTextColors;
-  //   icon: IconProp;
-  // };
-  faIcon?: any
-  svgIcon?: {
-    rounded?: boolean;
-    color: TwFillColors;
-    path: string;
-    id: string;
+  faIcon?: {
+    color: string; //TwTextColors;
+    icon: IconProp | string;
   };
+  svgIcon?:
+    | {
+        rounded?: boolean;
+        color: TwFillColors;
+        path: string;
+        id: string;
+      }
+    | undefined;
 }
 
 defineProps<CvSkillProps>();
@@ -57,14 +56,15 @@ defineProps<CvSkillProps>();
         </symbol>
         <use :xlink:href="`#${svgIcon.id}`"></use>
       </svg>
+
       <fa-icon
-        v-else-if="!isSvg && faIcon"
-        class="w-8vw h-8vw"
-        :class="([faIcon.color])"
-        :icon="(faIcon.icon)"
+        v-else-if="!isSvg && !!faIcon"
+        class="w-8vw !h-8vw"
+        :class="[faIcon?.color]"
+        :icon="faIcon?.icon ?? ['fab', 'github']"
       ></fa-icon>
-      <span v-else>ERR</span>
     </div>
+
     <span
       class="text-xlvw"
       :class="{ 'font-bold': isConfirmedSkill }"

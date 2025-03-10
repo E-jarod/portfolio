@@ -1,4 +1,4 @@
-import { CvSkillProps } from './cv-skill-props.model';
+import type { CvSkillProps } from './cv-skill-props.model';
 
 export const toolsSkills: CvSkillProps[] = [
   {
@@ -8,6 +8,24 @@ export const toolsSkills: CvSkillProps[] = [
     faIcon: {
       color: 'text-orange-500',
       icon: ['fab', 'git-alt'],
+    },
+  },
+  {
+    skillName: 'Gitlab CI/CD',
+    isConfirmedSkill: true,
+    bgColor: 'bg-orange-100',
+    faIcon: {
+      color: 'text-orange-500',
+      icon: ['fab', 'gitlab'],
+    },
+  },
+  {
+    skillName: 'Github Actions',
+    isConfirmedSkill: true,
+    bgColor: 'bg-neutral-100',
+    faIcon: {
+      color: 'text-neutral-900',
+      icon: ['fab', 'github'],
     },
   },
   // {

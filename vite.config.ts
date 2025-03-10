@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import eslint from 'vite-plugin-eslint';
+import eslint from 'vite-plugin-eslint2';
+import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 export default defineConfig({
@@ -23,5 +24,5 @@ export default defineConfig({
   },
   appType: 'spa',
   publicDir: 'src/assets',
-  plugins: [vue(), eslint()],
+  plugins: [vue(), eslint(), tailwindcss()],
 });

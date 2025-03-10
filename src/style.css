@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+/* @custom-variant custom-screen (@media screen); */
+@custom-variant print (@media print);
+
+@theme {
+  --spacing-1vw: 0.22727272727272727vw;
+  --spacing-2vw: 0.45454545454545453vw;
+  --spacing-3vw: 0.6818181818181818vw;
+  --spacing-4vw: 0.9090909090909091vw;
+  --spacing-5vw: 1.1363636363636362vw;
+  --spacing-6vw: 1.3636363636363635vw;
+  --spacing-7vw: 1.5909090909090908vw;
+  --spacing-8vw: 1.8181818181818181vw;
+  --spacing-9vw: 2.0454545454545454vw;
+  --spacing-10vw: 2.2727272727272725vw;
+  --spacing-11vw: 2.5vw;
+  --spacing-12vw: 2.727272727272727vw;
+  --spacing-14vw: 3.1818181818181817vw;
+  --spacing-16vw: 3.6363636363636362vw;
+  --spacing-20vw: 4.545454545454545vw;
+  --spacing-24vw: 5.454545454545454vw;
+  --spacing-28vw: 6.363636363636363vw;
+  --spacing-32vw: 7.2727272727272725vw;
+  --spacing-36vw: 8.181818181818182vw;
+  --spacing-40vw: 9.09090909090909vw;
+  --spacing-44vw: 10vw;
+  --spacing-48vw: 10.909090909090908vw;
+  --spacing-52vw: 11.818181818181817vw;
+  --spacing-56vw: 12.727272727272727vw;
+  --spacing-60vw: 13.636363636363635vw;
+  --spacing-64vw: 14.545454545454545vw;
+  --spacing-72vw: 16.363636363636363vw;
+  --spacing-80vw: 18.18181818181818vw;
+  --spacing-96vw: 21.818181818181817vw;
+  --spacing-0_5vw: 0.11363636363636363vw;
+  --spacing-1_5vw: 0.3409090909090909vw;
+  --spacing-2_5vw: 0.5681818181818181vw;
+  --spacing-3_5vw: 0.7954545454545454vw;
+
+  --text-xsvw: 0.6818181818181818vw;
+  --text-smvw: 0.7954545454545454vw;
+  --text-basevw: 0.9090909090909091vw;
+  --text-lgvw: 1.0227272727272727vw;
+  --text-xlvw: 1.1363636363636362vw;
+  --text-2xlvw: 1.3636363636363635vw;
+  --text-3xlvw: 1.7045454545454544vw;
+  --text-4xlvw: 2.0454545454545454vw;
+  --text-5xlvw: 2.727272727272727vw;
+  --text-6xlvw: 3.4090909090909087vw;
+  --text-7xlvw: 4.090909090909091vw;
+  --text-8xlvw: 5.454545454545454vw;
+  --text-9xlvw: 7.2727272727272725vw;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  html {
+    font-family: 'M PLUS Rounded 1c', system-ui, sans-serif;
+    font-family: 'Varela Round', system-ui, sans-serif;
+  }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  @apply transition-all ease-in-out duration-200;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  @apply translate-y-1 opacity-0;
+}
